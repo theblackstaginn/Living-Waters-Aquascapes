@@ -482,3 +482,38 @@ a {
     max-width: 640px;
   }
 }
+/* =========================
+   ICON PAGE
+========================= */
+
+.icon-page {
+  background: #121212;
+  color: #eee;
+  min-height: 100vh;
+}
+
+.icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
+  gap: 2rem;
+}
+
+.icon-display {
+  max-width: 360px;
+  width: 90%;
+  height: auto;
+  border-radius: 28px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.05),
+    0 20px 40px rgba(0,0,0,0.6);
+  background: #1a1a1a;
+}
+
+/* reuse your stone button */
+.stone-button {
+  text-decoration: none;
+  color: #eee;
+}
