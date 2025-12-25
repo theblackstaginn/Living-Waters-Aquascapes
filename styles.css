@@ -460,3 +460,25 @@ a {
 .back-button:active {
   transform: translateY(0);
 }
+/* --- HERO IMAGE SIZE FIX --- */
+.hero-image,
+.hero-media img,
+.hero img,
+#hero img {
+  width: 100%;
+  max-width: 520px;   /* <- make smaller/larger here */
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+/* On bigger screens, let it breathe a bit */
+@media (min-width: 900px) {
+  .hero-image,
+  .hero-media img,
+  .hero img,
+  #hero img {
+    max-width: 640px;
+  }
+}
