@@ -3,26 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Living Waters Aquascapes</title>
-  <meta name="description" content="Custom decorative ponds, stone facades, and waterfall features in North Georgia / Blue Ridge. Portfolio-first site with concept mockups and contact." />
-
-  <!-- IMPORTANT: project repo = relative paths (no leading /) -->
+  <meta name="description" content="Custom decorative ponds, stone facades, and waterfall features in North Georgia / Blue Ridge. Portfolio-first site with concept mockups and direct contact." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="#top" aria-label="Living Waters Aquascapes">
-        <img class="brand-icon" src="assets/LW-icon.png" alt="Living Waters Aquascapes icon">
+      <a class="brand" href="#top" aria-label="Living Waters Aquascapes home">
+        <img class="brand-icon" src="assets/LW-icon.png" alt="Living Waters Aquascapes icon" />
         <div class="brand-lockup">
           <div class="brand-name">Living Waters Aquascapes</div>
           <div class="brand-sub">North Georgia / Blue Ridge</div>
         </div>
       </a>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary navigation">
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#process">Process</a>
@@ -32,17 +29,18 @@
   </header>
 
   <main id="top">
+    <!-- HERO -->
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <h1>Integrating handcrafted stonework and waterfall features into ponds and hot tubs.</h1>
           <p class="sub">
-            Custom aquascapes built to feel natural, timeless, and grounded—designed for sound, flow, and long-term durability.
+            Builder-led aquascapes designed to feel natural and timeless—tuned for sound, flow, and long-term durability.
           </p>
 
           <div class="cta-row">
-            <a class="btn primary" href="tel:+17622398229">Call (762) 239-8229</a>
-            <a class="btn ghost" href="#portfolio">View Concept Designs</a>
+            <a class="btn stone primary" href="tel:+17622398229">Call (762) 239-8229</a>
+            <a class="btn stone" href="#portfolio">View Concept Designs</a>
           </div>
 
           <div class="meta">
@@ -62,13 +60,15 @@
 
           <p class="fine">
             <span class="pill">Portfolio-first</span>
-            <span class="pill">Real photos added as builds complete</span>
+            <span class="pill">Concepts now, real installs soon</span>
             <span class="pill">Phone-first contact</span>
           </p>
         </div>
 
         <div class="hero-card">
-          <img class="hero-image" src="assets/LW-cover.png" alt="Decorative pond and stone waterfall concept cover image">
+          <div class="hero-media">
+            <img class="hero-image" src="assets/LW-cover.png" alt="Living Waters Aquascapes cover image (concept)" />
+          </div>
           <div class="hero-card-footer">
             <span class="badge">CONCEPT</span>
             <span class="muted">Cover image (concept)</span>
@@ -77,6 +77,7 @@
       </div>
     </section>
 
+    <!-- SERVICES -->
     <section id="services" class="section">
       <div class="wrap">
         <h2>Services</h2>
@@ -84,83 +85,108 @@
 
         <div class="cards">
           <article class="card">
-            <h3>Decorative Ponds</h3>
+            <div class="card-top">
+              <span class="dot water"></span>
+              <h3>Decorative Ponds</h3>
+            </div>
             <p>Natural pond layouts with stone facades, planting zones, and clear sightlines.</p>
           </article>
 
           <article class="card">
-            <h3>Waterfalls &amp; Stone Features</h3>
+            <div class="card-top">
+              <span class="dot moss"></span>
+              <h3>Waterfalls &amp; Stone Features</h3>
+            </div>
             <p>Hand-placed rockwork and tuned flow for sound, movement, and balance.</p>
           </article>
 
           <article class="card">
-            <h3>Hot Tub Integration</h3>
+            <div class="card-top">
+              <span class="dot stone"></span>
+              <h3>Hot Tub Integration</h3>
+            </div>
             <p>Stonework and waterfalls built to complement hot tub and spa environments.</p>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- PORTFOLIO -->
     <section id="portfolio" class="section alt">
       <div class="wrap">
         <h2>Portfolio</h2>
         <p class="lead">
-          The images below are <strong>concept mockups</strong> used to communicate design direction. They will be replaced by real project photography as installations are completed.
+          These images are <strong>concept mockups</strong> used to communicate design direction. They will be replaced with real project photography as installations are completed.
         </p>
 
-        <div class="grid">
-          <figure class="tile">
-            <img src="assets/mockup-hot-tub-integration.png" alt="Hot tub with integrated stone facade and waterfall mockup">
-            <figcaption><span class="badge">CONCEPT</span> Hot tub integration</figcaption>
-          </figure>
+        <div class="gallery" aria-label="Concept portfolio gallery">
+          <button class="tile" type="button"
+                  data-full="assets/mockup-hot-tub-integration.png"
+                  data-alt="Hot tub with integrated stone facade and waterfall concept">
+            <img src="assets/mockup-hot-tub-integration.png" alt="Hot tub integration concept mockup" />
+            <span class="tile-cap"><span class="badge">CONCEPT</span> Hot tub integration</span>
+          </button>
 
-          <figure class="tile">
-            <img src="assets/mockup-garden-pond.png" alt="Garden pond with stone waterfall mockup">
-            <figcaption><span class="badge">CONCEPT</span> Garden pond</figcaption>
-          </figure>
+          <button class="tile" type="button"
+                  data-full="assets/mockup-garden-pond.png"
+                  data-alt="Garden pond with stone waterfall concept">
+            <img src="assets/mockup-garden-pond.png" alt="Garden pond concept mockup" />
+            <span class="tile-cap"><span class="badge">CONCEPT</span> Garden pond</span>
+          </button>
 
-          <figure class="tile">
-            <img src="assets/mockup-commercial-water-feature.png" alt="Commercial building water feature mockup">
-            <figcaption><span class="badge">CONCEPT</span> Commercial water feature</figcaption>
-          </figure>
+          <button class="tile" type="button"
+                  data-full="assets/mockup-commercial-water-feature.png"
+                  data-alt="Commercial building water feature concept">
+            <img src="assets/mockup-commercial-water-feature.png" alt="Commercial water feature concept mockup" />
+            <span class="tile-cap"><span class="badge">CONCEPT</span> Commercial feature</span>
+          </button>
 
-          <figure class="tile">
-            <img src="assets/mockup-courtyard-water-feature.png" alt="Courtyard stone water feature mockup">
-            <figcaption><span class="badge">CONCEPT</span> Courtyard feature</figcaption>
-          </figure>
+          <button class="tile" type="button"
+                  data-full="assets/mockup-courtyard-water-feature.png"
+                  data-alt="Courtyard stone water feature concept">
+            <img src="assets/mockup-courtyard-water-feature.png" alt="Courtyard water feature concept mockup" />
+            <span class="tile-cap"><span class="badge">CONCEPT</span> Courtyard feature</span>
+          </button>
         </div>
+
+        <p class="hint">Tip: click any image to view it full size.</p>
       </div>
     </section>
 
+    <!-- PROCESS -->
     <section id="process" class="section">
       <div class="wrap">
         <h2>Process</h2>
+        <p class="lead">Simple, direct, and builder-led—so the finished feature fits the space naturally.</p>
 
         <ol class="steps">
           <li>
             <h3>Consultation</h3>
-            <p>Talk through the space, goals, and constraints (budget, access, sound, maintenance).</p>
+            <p>We walk the space and define goals: sound, flow, access, maintenance, and budget.</p>
           </li>
           <li>
             <h3>Design Direction</h3>
-            <p>Concept direction and material approach tailored to the environment.</p>
+            <p>We set the stone character and feature layout so it looks intentional and natural.</p>
           </li>
           <li>
             <h3>Build &amp; Install</h3>
-            <p>Stone placement, plumbing, and flow tuning—built to last.</p>
+            <p>Stone placement, plumbing, and flow tuning—built for longevity and stability.</p>
           </li>
           <li>
             <h3>Walkthrough</h3>
-            <p>Final adjustments and care guidance so it stays beautiful.</p>
+            <p>Final adjustments and care guidance so it stays beautiful over time.</p>
           </li>
         </ol>
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="section alt">
       <div class="wrap">
         <h2>Contact</h2>
-        <p class="lead">Call or text to discuss your space and what you’re envisioning.</p>
+        <p class="lead">
+          Currently booking a limited number of custom builds. Call or text to talk through your space.
+        </p>
 
         <div class="contact-row">
           <div class="contact-card">
@@ -189,22 +215,69 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="wrap footer-inner">
       <div>
-        <strong>Living Waters Aquascapes</strong><br>
+        <strong>Living Waters Aquascapes</strong><br />
         <span class="muted">Custom ponds • stone facades • waterfalls</span>
       </div>
 
       <div class="footer-right">
-        <a class="link" href="tel:+17622398229">(762) 239-8229</a><br>
+        <a class="link" href="tel:+17622398229">(762) 239-8229</a><br />
         <span class="muted">© <span id="year"></span></span>
       </div>
     </div>
   </footer>
 
+  <!-- MODAL -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Image viewer">
+      <button class="modal-close btn stone" type="button" aria-label="Close" data-close="true">Close</button>
+      <img id="modalImg" alt="" />
+      <div id="modalCap" class="modal-cap muted"></div>
+    </div>
+  </div>
+
   <script>
+    // year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // gallery modal
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modalImg");
+    const modalCap = document.getElementById("modalCap");
+
+    function openModal(src, alt) {
+      modalImg.src = src;
+      modalImg.alt = alt || "";
+      modalCap.textContent = alt || "";
+      modal.classList.add("active");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modal.classList.remove("active");
+      modal.setAttribute("aria-hidden", "true");
+      modalImg.src = "";
+      document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll(".gallery .tile").forEach(btn => {
+      btn.addEventListener("click", () => {
+        openModal(btn.dataset.full, btn.dataset.alt);
+      });
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target && e.target.dataset && e.target.dataset.close === "true") closeModal();
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("active")) closeModal();
+    });
   </script>
 </body>
 </html>
