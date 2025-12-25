@@ -4,100 +4,178 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Living Waters Aquascapes</title>
+  <meta name="description" content="Living Waters Aquascapes — handcrafted stonework, ponds, waterfalls, and integrated hot tub water features in North Georgia / Blue Ridge." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <header class="site-header">
-  <div class="brand">
-    <img src="assets/LW-icon.png" alt="Living Waters Aquascapes logo" />
-    <div>
-      <h1>Living Waters Aquascapes</h1>
-      <span>North Georgia · Blue Ridge</span>
+  <div class="wrap header-inner">
+    <div class="brand">
+      <img src="assets/LW-icon.png" alt="Living Waters Aquascapes logo" class="brand-mark" />
+      <div class="brand-text">
+        <div class="brand-name">Living Waters Aquascapes</div>
+        <div class="brand-sub">North Georgia · Blue Ridge</div>
+      </div>
     </div>
-  </div>
 
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#process">Process</a>
-    <a href="#contact" class="stone-btn small">Contact</a>
-  </nav>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#process">Process</a>
+      <a href="#contact" class="stone-btn small">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<section class="hero">
-  <div class="hero-text">
-    <h2>Integrating handcrafted stonework and waterfall features into ponds and hot tubs.</h2>
-    <p>
-      Custom aquascapes built to feel natural, timeless, and grounded—
-      designed for sound, flow, and long-term durability.
-    </p>
+<main>
 
-    <div class="hero-actions">
-      <a class="stone-btn" href="tel:+17622398229">Call (762) 239-8229</a>
-      <a class="stone-btn outline" href="#portfolio">View Concept Designs</a>
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <h1>Integrating handcrafted stonework and waterfall features into ponds and hot tubs.</h1>
+        <p class="lead">
+          Custom aquascapes designed for sound, flow, and long-term durability—built to feel natural, timeless, and grounded.
+        </p>
+
+        <div class="hero-actions">
+          <a class="stone-btn" href="tel:+17622398229">Call (762) 239-8229</a>
+          <a class="stone-btn outline" href="#portfolio">View Concept Designs</a>
+        </div>
+
+        <ul class="meta">
+          <li><strong>Owner:</strong> Tyler Gibson</li>
+          <li><strong>Region:</strong> North Georgia / Blue Ridge</li>
+          <li><strong>Focus:</strong> Natural stone facades, waterfalls, water features</li>
+        </ul>
+      </div>
+
+      <div class="hero-media">
+        <div class="hero-card">
+          <img src="assets/LW-cover.png" alt="Living Waters Aquascapes cover image" />
+        </div>
+      </div>
     </div>
+  </section>
 
-    <ul class="details">
-      <li><strong>Owner:</strong> Tyler Gibson</li>
-      <li><strong>Region:</strong> North Georgia / Blue Ridge</li>
-      <li><strong>Focus:</strong> Natural stone, waterfalls, integrated features</li>
-    </ul>
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="wrap">
+      <h2>Services</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Ponds & Waterfalls</h3>
+          <p>Naturalistic garden ponds with stonework, plant integration, and flowing waterfall sound.</p>
+        </div>
+        <div class="card">
+          <h3>Hot Tub Integrations</h3>
+          <p>Stone facade build-outs and waterfall features designed to integrate cleanly with existing spas.</p>
+        </div>
+        <div class="card">
+          <h3>Commercial Features</h3>
+          <p>Courtyard and entry water features for businesses, rentals, and hospitality properties.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="section alt">
+    <div class="wrap">
+      <h2>Concept Portfolio</h2>
+      <p class="lead small-note">
+        These are <strong>concept mockups</strong> used to show design direction while the portfolio is being built with real installations.
+      </p>
+
+      <div class="gallery">
+        <button class="tile" type="button"
+          data-full="assets/mockup-hot-tub-integration.png"
+          data-alt="Hot tub with integrated stone facade and waterfall">
+          <img src="assets/mockup-hot-tub-integration.png" alt="Hot tub integration concept">
+          <span>Hot Tub Integration</span>
+        </button>
+
+        <button class="tile" type="button"
+          data-full="assets/mockup-garden-pond.png"
+          data-alt="Garden pond with natural stone waterfall">
+          <img src="assets/mockup-garden-pond.png" alt="Garden pond concept">
+          <span>Garden Pond</span>
+        </button>
+
+        <button class="tile" type="button"
+          data-full="assets/mockup-commercial-water-feature.png"
+          data-alt="Commercial building water feature with stone facade">
+          <img src="assets/mockup-commercial-water-feature.png" alt="Commercial water feature concept">
+          <span>Commercial Feature</span>
+        </button>
+
+        <button class="tile" type="button"
+          data-full="assets/mockup-courtyard-water-feature.png"
+          data-alt="Courtyard stone water feature">
+          <img src="assets/mockup-courtyard-water-feature.png" alt="Courtyard water feature concept">
+          <span>Courtyard Feature</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="section">
+    <div class="wrap">
+      <h2>Process</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Consult</h3>
+            <p>Talk through the space, flow goals, and stone style. We keep it practical and buildable.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Design Direction</h3>
+            <p>Confirm shape, scale, and feature intent so the end result looks natural—not “installed.”</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Build</h3>
+            <p>Stonework, basin work, plumbing/flow, and finishing—built for longevity and easy maintenance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <div class="wrap contact-inner">
+      <div>
+        <h2>Contact</h2>
+        <p class="lead">Call or text to discuss your project.</p>
+        <div class="contact-actions">
+          <a class="stone-btn" href="tel:+17622398229">Call (762) 239-8229</a>
+        </div>
+        <p class="fine">Serving North Georgia / Blue Ridge.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>© <span id="year"></span> Living Waters Aquascapes</div>
   </div>
-
-  <div class="hero-image">
-    <img src="assets/LW-cover.png" alt="Living Waters Aquascapes signage" />
-  </div>
-</section>
-
-<section id="portfolio" class="portfolio">
-  <h3>Concept Portfolio</h3>
-
-  <div class="gallery">
-    <button class="tile" data-full="assets/mockup-hot-tub-integration.png" data-alt="Hot tub with integrated stone waterfall">
-      <img src="assets/mockup-hot-tub-integration.png" alt="Hot tub integration concept">
-      <span>Hot Tub Integration</span>
-    </button>
-
-    <button class="tile" data-full="assets/mockup-garden-pond.png" data-alt="Garden pond with natural stone waterfall">
-      <img src="assets/mockup-garden-pond.png" alt="Garden pond concept">
-      <span>Garden Pond</span>
-    </button>
-
-    <button class="tile" data-full="assets/mockup-commercial-water-feature.png" data-alt="Commercial building water feature">
-      <img src="assets/mockup-commercial-water-feature.png" alt="Commercial water feature concept">
-      <span>Commercial Feature</span>
-    </button>
-
-    <button class="tile" data-full="assets/mockup-courtyard-water-feature.png" data-alt="Courtyard water feature">
-      <img src="assets/mockup-courtyard-water-feature.png" alt="Courtyard water feature concept">
-      <span>Courtyard Feature</span>
-    </button>
-  </div>
-</section>
-
-<section id="process" class="process">
-  <h3>Our Process</h3>
-  <p>
-    Each build begins with flow, stone, and setting. We design for
-    longevity first—then beauty follows naturally.
-  </p>
-</section>
-
-<section id="contact" class="contact">
-  <h3>Get in Touch</h3>
-  <p>Call or text to discuss your project.</p>
-  <a class="stone-btn" href="tel:+17622398229">(762) 239-8229</a>
-</section>
-
-<footer>
-  <p>© <span id="year"></span> Living Waters Aquascapes</p>
 </footer>
 
 <!-- MODAL -->
-<div id="modal" aria-hidden="true">
-  <div class="modal-inner">
-    <button class="close" data-close="true">×</button>
+<div id="modal" class="modal" aria-hidden="true">
+  <div class="modal-inner" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="modal-close" type="button" data-close="true" aria-label="Close">×</button>
     <img id="modalImg" src="" alt="" />
     <p id="modalCap"></p>
   </div>
@@ -112,26 +190,26 @@
 
   function openModal(src, alt) {
     modalImg.src = src;
+    modalImg.alt = alt || "";
     modalCap.textContent = alt || "";
     modal.classList.add("active");
-    document.body.style.overflow = "hidden";
+    document.body.classList.add("no-scroll");
   }
 
   function closeModal() {
     modal.classList.remove("active");
     modalImg.src = "";
-    document.body.style.overflow = "";
+    modalCap.textContent = "";
+    document.body.classList.remove("no-scroll");
   }
 
   document.addEventListener("click", (e) => {
     const tile = e.target.closest(".tile");
-    if (tile) {
-      openModal(tile.dataset.full, tile.dataset.alt);
-    }
+    if (tile && tile.dataset.full) openModal(tile.dataset.full, tile.dataset.alt);
 
-    if (e.target.dataset.close === "true" || e.target.id === "modal") {
-      closeModal();
-    }
+    if (e.target.dataset.close === "true") closeModal();
+
+    if (e.target.classList.contains("modal")) closeModal();
   });
 
   window.addEventListener("keydown", (e) => {
@@ -140,5 +218,6 @@
 </script>
 
 </body>
-</html
+</html>
+
 
