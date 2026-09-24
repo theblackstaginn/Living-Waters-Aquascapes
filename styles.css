@@ -1,3371 +1,1299 @@
-/* ========================================
-   LIVING WATERS AQUASCAPES
-   styles.css
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+
+  <title>
+    Living Waters Aquascapes | Ponds, Waterfalls & Stonework in North Georgia
+  </title>
+
+  <meta
+    name="description"
+    content="Living Waters Aquascapes creates handcrafted ponds, waterfalls, stone features, hot tub integrations, and commercial water features throughout North Georgia and the Blue Ridge area."
+  />
+
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large"
+  />
+
+  <meta
+    name="theme-color"
+    content="#e4e1d5"
+  />
+
+  <link
+    rel="canonical"
+    href="https://theblackstaginn.github.io/Living-Waters-Aquascapes/"
+  />
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="assets/LW-icon.png"
+  />
+
+  <link
+    rel="apple-touch-icon"
+    href="assets/LW-icon.png"
+  />
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <meta
+    property="og:site_name"
+    content="Living Waters Aquascapes"
+  />
+
+  <meta
+    property="og:title"
+    content="Living Waters Aquascapes | North Georgia"
+  />
+
+  <meta
+    property="og:description"
+    content="Handcrafted ponds, waterfalls, stonework, and water features designed to belong in the landscape."
+  />
+
+  <meta
+    property="og:url"
+    content="https://theblackstaginn.github.io/Living-Waters-Aquascapes/"
+  />
+
+  <meta
+    property="og:image"
+    content="https://theblackstaginn.github.io/Living-Waters-Aquascapes/assets/LW-cover.png"
+  />
+
+  <meta
+    property="og:image:alt"
+    content="Living Waters Aquascapes"
+  />
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://theblackstaginn.github.io/Living-Waters-Aquascapes/#business",
+    "name": "Living Waters Aquascapes",
+    "url": "https://theblackstaginn.github.io/Living-Waters-Aquascapes/",
+    "image": "https://theblackstaginn.github.io/Living-Waters-Aquascapes/assets/LW-cover.png",
+    "logo": "https://theblackstaginn.github.io/Living-Waters-Aquascapes/assets/LW-icon.png",
+    "telephone": "+1-762-239-8229",
+    "founder": {
+      "@type": "Person",
+      "name": "Tyler Gibson"
+    },
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "North Georgia"
+      },
+      {
+        "@type": "Place",
+        "name": "Blue Ridge, Georgia"
+      }
+    ],
+    "description": "Living Waters Aquascapes creates handcrafted ponds, waterfalls, stone features, hot tub integrations, and commercial water features in North Georgia and the Blue Ridge area."
+  }
+  </script>
+
+  <link
+    rel="stylesheet"
+    href="styles.css?v=20260924-2"
+  />
+</head>
 
-   North Georgia woodland / stone / water
-   ======================================== */
 
+<body>
 
-/* ========================================
-   VARIABLES
-   ======================================== */
+  <a
+    class="skip-link"
+    href="#main"
+  >
+    Skip to content
+  </a>
 
-:root {
-  --ink: #e9e7df;
-  --ink-soft: #c7c7bd;
-  --muted: #9fa49b;
 
-  --water: #9eb9b2;
-  --water-light: #c5d7d2;
-  --water-deep: #496c68;
+  <!-- ========================================
+       HEADER
+       ======================================== -->
 
-  --moss: #7f8c68;
-  --moss-light: #aab395;
-  --moss-deep: #48533f;
-
-  --stone: #aaa79c;
-  --stone-light: #d1cec2;
-  --stone-dark: #625f57;
-
-  --forest: #182219;
-  --forest-soft: #202c22;
-  --forest-deep: #0d130e;
-  --forest-black: #080d09;
-
-  --paper: #e7e1d3;
-
-  --line: rgba(231, 225, 211, .14);
-  --line-soft: rgba(231, 225, 211, .08);
-  --line-water: rgba(158, 185, 178, .22);
-
-  --glass: rgba(13, 19, 14, .72);
-  --glass-soft: rgba(21, 30, 22, .58);
-
-  --shadow:
-    0 24px 70px rgba(0, 0, 0, .32);
-
-  --shadow-heavy:
-    0 30px 100px rgba(0, 0, 0, .48);
-
-  --radius: 22px;
-  --radius-small: 14px;
-
-  --max: 1180px;
-
-  --header-height: 84px;
-
-  --ease:
-    cubic-bezier(.2, .75, .25, 1);
-}
-
+  <header
+    class="site-header"
+    id="top"
+  >
 
-/* ========================================
-   RESET
-   ======================================== */
+    <div class="header-inner">
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+      <a
+        class="brand"
+        href="#top"
+        aria-label="Living Waters Aquascapes home"
+      >
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: calc(
-    var(--header-height) + 24px
-  );
-}
-
-body {
-  min-width: 320px;
-  margin: 0;
-  overflow-x: hidden;
+        <img
+          class="brand-mark"
+          src="assets/LW-icon.png"
+          alt=""
+          width="64"
+          height="64"
+        />
 
-  color: var(--ink);
+        <span class="brand-copy">
 
-  background:
-    radial-gradient(
-      circle at 15% 10%,
-      rgba(78, 103, 79, .11),
-      transparent 34rem
-    ),
-    radial-gradient(
-      circle at 85% 35%,
-      rgba(73, 108, 104, .08),
-      transparent 30rem
-    ),
-    var(--forest-black);
+          <span class="brand-name">
+            Living Waters
+          </span>
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+          <span class="brand-sub">
+            Aquascapes
+          </span>
 
-  line-height: 1.6;
+        </span>
 
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
+      </a>
 
-body.nav-open,
-body.lightbox-open {
-  overflow: hidden;
-}
 
-img {
-  display: block;
-  max-width: 100%;
-}
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Open navigation"
+      >
 
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
+        <span></span>
+        <span></span>
+        <span></span>
 
-button {
-  color: inherit;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-p {
-  margin-top: 0;
-}
-
-::selection {
-  color: var(--forest-black);
-  background: var(--water-light);
-}
-
-
-/* ========================================
-   ACCESSIBILITY
-   ======================================== */
-
-.skip-link {
-  position: fixed;
-  top: 12px;
-  left: 12px;
-  z-index: 99999;
-
-  padding: 10px 14px;
-
-  color: var(--forest-black);
-  background: var(--paper);
-
-  border-radius: 8px;
-
-  transform: translateY(-160%);
-
-  transition:
-    transform .2s ease;
-}
-
-.skip-link:focus {
-  transform: translateY(0);
-}
-
-:focus-visible {
-  outline:
-    2px solid var(--water-light);
-  outline-offset: 4px;
-}
-
-
-/* ========================================
-   GLOBAL LAYOUT
-   ======================================== */
-
-.container {
-  width: min(
-    calc(100% - 48px),
-    var(--max)
-  );
-
-  margin-inline: auto;
-}
-
-.section {
-  position: relative;
-  padding: 120px 0;
-}
-
-.eyebrow {
-  margin: 0 0 16px;
-
-  color: var(--water-light);
-
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: .72rem;
-  font-weight: 700;
-
-  letter-spacing: .22em;
-  line-height: 1.4;
-
-  text-transform: uppercase;
-}
-
-h1,
-h2,
-h3,
-p {
-  overflow-wrap: break-word;
-}
-
-h1,
-h2,
-h3 {
-  color: var(--ink);
-  font-weight: 400;
-}
-
-h1 em,
-h2 em {
-  color: var(--water-light);
-  font-weight: 400;
-}
-
-.section h2,
-.intro-heading h2,
-.philosophy-content h2,
-.service-area-copy h2,
-.cta-content h2,
-.contact-intro h2 {
-  margin:
-    0;
-
-  font-size:
-    clamp(
-      2.55rem,
-      5vw,
-      5rem
-    );
-
-  line-height: .98;
-
-  letter-spacing: -.045em;
-}
-
-.section-marker {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-
-  color: var(--muted);
-
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: .68rem;
-  font-weight: 700;
+      </button>
 
-  letter-spacing: .18em;
-}
 
-.marker-line {
-  display: block;
+      <nav
+        class="site-nav"
+        id="site-nav"
+        aria-label="Primary navigation"
+      >
 
-  width: 46px;
-  height: 1px;
+        <a href="#services">
+          Services
+        </a>
 
-  background:
-    linear-gradient(
-      90deg,
-      var(--water),
-      transparent
-    );
-}
+        <a href="#work">
+          Our Work
+        </a>
 
+        <a href="#process">
+          Process
+        </a>
 
-/* ========================================
-   HEADER
-   ======================================== */
+        <a href="#service-area">
+          Service Area
+        </a>
 
-.site-header {
-  position: fixed;
-  inset:
-    0 0 auto 0;
+        <a
+          class="nav-cta"
+          href="#contact"
+        >
+          Start a Project
+        </a>
 
-  z-index: 1000;
+      </nav>
 
-  height:
-    var(--header-height);
+    </div>
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(7, 12, 8, .94),
-      rgba(7, 12, 8, .72)
-    );
+  </header>
 
-  border-bottom:
-    1px solid
-    rgba(231, 225, 211, .08);
 
-  backdrop-filter:
-    blur(18px);
+  <main id="main">
 
-  -webkit-backdrop-filter:
-    blur(18px);
 
-  transition:
-    background .25s ease,
-    box-shadow .25s ease;
-}
+    <!-- ========================================
+         HERO
+         ======================================== -->
 
-.site-header.scrolled {
-  background:
-    rgba(7, 12, 8, .94);
+    <section
+      class="hero"
+      aria-labelledby="hero-title"
+    >
 
-  box-shadow:
-    0 12px 40px
-    rgba(0, 0, 0, .24);
-}
+      <div class="hero-backdrop">
 
-.header-inner {
-  width: min(
-    calc(100% - 48px),
-    var(--max)
-  );
+        <img
+          src="assets/LW-cover.png"
+          alt=""
+          class="hero-backdrop-image"
+          loading="eager"
+          fetchpriority="high"
+        />
 
-  height: 100%;
+      </div>
 
-  margin-inline: auto;
+      <div class="hero-shade"></div>
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 
-  gap: 28px;
-}
+      <div class="container hero-inner">
 
+        <div class="hero-copy">
 
-/* ========================================
-   BRAND
-   ======================================== */
+          <p class="eyebrow">
+            North Georgia • Blue Ridge
+          </p>
 
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 13px;
+          <h1 id="hero-title">
+            Bring the sound of
+            <em>living water</em>
+            home.
+          </h1>
 
-  min-width: 0;
-}
+          <p class="hero-lede">
+            Handcrafted ponds, waterfalls, stonework,
+            and water features designed to feel as
+            though they have always belonged there.
+          </p>
 
-.brand-mark {
-  width: 50px;
-  height: 50px;
 
-  flex: 0 0 auto;
+          <div class="hero-actions">
 
-  object-fit: cover;
+            <a
+              class="button button-primary"
+              href="#contact"
+            >
+              Start Your Project
+            </a>
 
-  border-radius: 50%;
+            <a
+              class="button button-secondary"
+              href="#work"
+            >
+              See the Possibilities
+            </a>
 
-  box-shadow:
-    0 0 0 1px
-    rgba(231, 225, 211, .12),
-    0 8px 22px
-    rgba(0, 0, 0, .26);
-}
+          </div>
 
-.brand-copy {
-  display: flex;
-  flex-direction: column;
 
-  line-height: 1;
-}
+          <p class="hero-byline">
+            Designed and built by
+            <strong>Tyler Gibson</strong>
+          </p>
 
-.brand-name {
-  color: var(--ink);
+        </div>
 
-  font-size: 1rem;
-  letter-spacing: .015em;
-}
+      </div>
 
-.brand-sub {
-  margin-top: 5px;
+    </section>
 
-  color: var(--muted);
 
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+    <!-- ========================================
+         INTRO
+         ======================================== -->
 
-  font-size: .61rem;
-  font-weight: 700;
+    <section
+      class="intro-section"
+      id="intro"
+    >
 
-  letter-spacing: .22em;
-  text-transform: uppercase;
-}
+      <div class="container intro-grid">
 
+        <div class="intro-heading">
 
-/* ========================================
-   NAVIGATION
-   ======================================== */
+          <p class="eyebrow">
+            Built Into the Landscape
+          </p>
 
-.site-nav {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
+          <h2>
+            Stone. Water.
+            <em>Movement.</em>
+          </h2>
 
-.site-nav > a {
-  position: relative;
+        </div>
 
-  padding: 11px 12px;
 
-  color: var(--ink-soft);
+        <div class="intro-copy">
 
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+          <p class="intro-lead">
+            A great water feature should not look
+            installed. It should look discovered.
+          </p>
 
-  font-size: .76rem;
-  font-weight: 650;
+          <p>
+            Living Waters Aquascapes combines
+            natural stone, thoughtful water flow,
+            and the character of the surrounding
+            landscape to create spaces that feel
+            established rather than added on.
+          </p>
 
-  letter-spacing: .07em;
+          <p>
+            From a quiet garden pond to a cascading
+            waterfall beside a hot tub, every project
+            begins with the place itself.
+          </p>
 
-  transition:
-    color .2s ease,
-    background .2s ease;
-}
+        </div>
 
-.site-nav > a:not(.nav-cta)::after {
-  content: "";
+      </div>
 
-  position: absolute;
+    </section>
 
-  left: 12px;
-  right: 12px;
-  bottom: 5px;
 
-  height: 1px;
+    <!-- ========================================
+         SERVICES
+         ======================================== -->
 
-  background: var(--water);
+    <section
+      class="section services-section"
+      id="services"
+      aria-labelledby="services-title"
+    >
 
-  transform: scaleX(0);
-  transform-origin: right;
+      <div class="container">
 
-  transition:
-    transform .25s var(--ease);
-}
+        <div class="section-heading">
 
-.site-nav > a:hover {
-  color: #fff;
-}
+          <p class="eyebrow">
+            What We Build
+          </p>
 
-.site-nav > a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
+          <h2 id="services-title">
+            Water shaped
+            <em>for the space.</em>
+          </h2>
 
-.site-nav .nav-cta {
-  margin-left: 8px;
-  padding: 11px 17px;
+          <p class="section-lede">
+            Every feature begins with the property,
+            the stone, and the way water should move
+            through the finished space.
+          </p>
 
-  color: var(--forest-black);
+        </div>
 
-  background:
-    linear-gradient(
-      145deg,
-      var(--water-light),
-      var(--water)
-    );
 
-  border:
-    1px solid
-    rgba(255, 255, 255, .16);
+        <div class="service-grid">
 
-  border-radius: 999px;
+          <article class="service-card">
 
-  box-shadow:
-    inset 0 1px 0
-    rgba(255, 255, 255, .25);
+            <h3>
+              Garden Ponds
+            </h3>
 
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease;
-}
+            <p>
+              Koi ponds, lily ponds, and naturalized
+              water gardens shaped with stone,
+              planting areas, and thoughtful flow.
+            </p>
 
-.site-nav .nav-cta:hover {
-  color: var(--forest-black);
+            <a
+              href="#contact"
+              class="text-link"
+            >
+              Plan a pond
+            </a>
 
-  transform:
-    translateY(-1px);
+          </article>
 
-  box-shadow:
-    inset 0 1px 0
-    rgba(255, 255, 255, .3),
-    0 10px 30px
-    rgba(0, 0, 0, .2);
-}
 
-.nav-toggle {
-  display: none;
+          <article class="service-card">
 
-  width: 46px;
-  height: 46px;
+            <h3>
+              Waterfalls &amp; Stonework
+            </h3>
 
-  padding: 0;
+            <p>
+              Hand-stacked stone and integrated
+              spillways designed around natural
+              movement, sound, and the character
+              of the site.
+            </p>
 
-  border:
-    1px solid var(--line);
+            <a
+              href="#contact"
+              class="text-link"
+            >
+              Build a waterfall
+            </a>
 
-  border-radius: 50%;
+          </article>
 
-  background:
-    rgba(255, 255, 255, .035);
 
-  cursor: pointer;
-}
+          <article class="service-card">
 
-.nav-toggle span {
-  display: block;
+            <h3>
+              Hot Tub Features
+            </h3>
 
-  width: 18px;
-  height: 1px;
+            <p>
+              Stone surrounds and water features
+              designed to help an existing hot tub
+              settle naturally into its environment.
+            </p>
 
-  margin: 5px auto;
+            <a
+              href="#contact"
+              class="text-link"
+            >
+              Transform the space
+            </a>
 
-  background: var(--ink);
+          </article>
 
-  transition:
-    transform .25s ease,
-    opacity .25s ease;
-}
 
+          <article class="service-card">
 
-/* ========================================
-   BUTTONS
-   ======================================== */
+            <h3>
+              Commercial Features
+            </h3>
 
-.button {
-  position: relative;
+            <p>
+              Water and stone features for
+              courtyards, entrances, lodges,
+              rentals, and other commercial
+              environments.
+            </p>
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+            <a
+              href="#contact"
+              class="text-link"
+            >
+              Discuss a project
+            </a>
 
-  min-height: 52px;
+          </article>
 
-  padding: 13px 22px;
+        </div>
 
-  overflow: hidden;
+      </div>
 
-  border:
-    1px solid transparent;
+    </section>
 
-  border-radius: 999px;
 
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+    <!-- ========================================
+         ATMOSPHERE BREAK
+         ======================================== -->
 
-  font-size: .78rem;
-  font-weight: 750;
+    <section
+      class="water-break"
+      aria-hidden="true"
+    >
 
-  letter-spacing: .07em;
+      <div class="water-break-image"></div>
+      <div class="water-break-wash"></div>
 
-  cursor: pointer;
+    </section>
 
-  transition:
-    transform .22s var(--ease),
-    box-shadow .22s var(--ease),
-    background .22s ease,
-    border-color .22s ease;
-}
 
-.button:hover {
-  transform:
-    translateY(-2px);
-}
+    <!-- ========================================
+         WORK
+         ======================================== -->
 
-.button-primary {
-  color: var(--forest-black);
+    <section
+      class="section work-section"
+      id="work"
+      aria-labelledby="work-title"
+    >
 
-  background:
-    linear-gradient(
-      145deg,
-      var(--water-light),
-      var(--water)
-    );
+      <div class="container">
 
-  border-color:
-    rgba(255, 255, 255, .18);
+        <div class="work-heading">
 
-  box-shadow:
-    inset 0 1px 0
-    rgba(255, 255, 255, .28),
-    0 15px 35px
-    rgba(0, 0, 0, .24);
-}
+          <div>
 
-.button-primary:hover {
-  box-shadow:
-    inset 0 1px 0
-    rgba(255, 255, 255, .32),
-    0 18px 40px
-    rgba(0, 0, 0, .3);
-}
+            <p class="eyebrow">
+              The Possibilities
+            </p>
 
-.button-secondary {
-  color: var(--ink);
+            <h2 id="work-title">
+              Designed around
+              <em>the land.</em>
+            </h2>
 
-  background:
-    rgba(8, 13, 9, .36);
+          </div>
 
-  border-color:
-    rgba(231, 225, 211, .22);
 
-  backdrop-filter:
-    blur(10px);
+          <p class="work-heading-copy">
+            These concept studies show the kinds of
+            environments Living Waters can create.
+            As completed-project photography grows,
+            those projects can take their place here.
+          </p>
 
-  -webkit-backdrop-filter:
-    blur(10px);
-}
+        </div>
 
-.button-secondary:hover {
-  background:
-    rgba(255, 255, 255, .07);
 
-  border-color:
-    rgba(231, 225, 211, .34);
-}
+        <div
+          class="project-grid"
+          aria-label="Living Waters concept gallery"
+        >
 
-.button-secondary-light {
-  color: #fff;
 
-  background:
-    rgba(255, 255, 255, .06);
+          <button
+            class="project-card project-card-large"
+            type="button"
+            data-lightbox
+            data-full="assets/mockup-hot-tub-integration.png"
+            data-alt="Hot tub integration concept"
+          >
 
-  border-color:
-    rgba(255, 255, 255, .28);
+            <img
+              src="assets/mockup-hot-tub-integration.png"
+              alt="Concept design of a hot tub integrated with stone and water"
+              loading="lazy"
+            />
 
-  backdrop-filter:
-    blur(12px);
+            <span class="project-shade"></span>
 
-  -webkit-backdrop-filter:
-    blur(12px);
-}
+            <span class="project-copy">
 
-.button-secondary-light:hover {
-  background:
-    rgba(255, 255, 255, .11);
-}
+              <span class="project-type">
+                Concept Study
+              </span>
 
+              <span class="project-title">
+                Hot Tub Integration
+              </span>
 
-/* ========================================
-   HERO
-   ======================================== */
+              <span class="project-action">
+                View concept
+              </span>
 
-.hero {
-  position: relative;
+            </span>
 
-  min-height: 100svh;
+          </button>
 
-  display: flex;
-  align-items: flex-end;
 
-  padding:
-    calc(
-      var(--header-height) + 90px
-    )
-    0
-    105px;
+          <button
+            class="project-card"
+            type="button"
+            data-lightbox
+            data-full="assets/mockup-garden-pond.png"
+            data-alt="Garden pond concept"
+          >
 
-  overflow: hidden;
+            <img
+              src="assets/mockup-garden-pond.png"
+              alt="Concept design of a natural garden pond"
+              loading="lazy"
+            />
 
-  background:
-    var(--forest-black);
-}
+            <span class="project-shade"></span>
 
-.hero-backdrop,
-.hero-shade,
-.hero-water-glow {
-  position: absolute;
-  inset: 0;
-}
+            <span class="project-copy">
 
-.hero-backdrop-image {
-  width: 100%;
-  height: 100%;
+              <span class="project-type">
+                Concept Study
+              </span>
 
-  object-fit: cover;
-  object-position: center;
+              <span class="project-title">
+                Garden Pond
+              </span>
 
-  filter:
-    saturate(.82)
-    contrast(1.04)
-    brightness(.72);
+              <span class="project-action">
+                View concept
+              </span>
 
-  transform: scale(1.015);
-}
+            </span>
 
-.hero-shade {
-  background:
-    linear-gradient(
-      90deg,
-      rgba(5, 9, 6, .92)
-      0%,
-      rgba(5, 9, 6, .78)
-      35%,
-      rgba(5, 9, 6, .32)
-      67%,
-      rgba(5, 9, 6, .2)
-      100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(5, 9, 6, .36)
-      0%,
-      transparent 30%,
-      rgba(5, 9, 6, .68)
-      100%
-    );
-}
+          </button>
 
-.hero-water-glow {
-  inset: auto -10% -35% 35%;
 
-  height: 70%;
+          <button
+            class="project-card"
+            type="button"
+            data-lightbox
+            data-full="assets/mockup-commercial-water-feature.png"
+            data-alt="Commercial water feature concept"
+          >
 
-  background:
-    radial-gradient(
-      ellipse,
-      rgba(128, 168, 159, .16),
-      transparent 64%
-    );
+            <img
+              src="assets/mockup-commercial-water-feature.png"
+              alt="Concept design of a commercial water feature"
+              loading="lazy"
+            />
 
-  filter: blur(18px);
+            <span class="project-shade"></span>
 
-  pointer-events: none;
-}
+            <span class="project-copy">
 
-.hero-inner {
-  position: relative;
-  z-index: 3;
+              <span class="project-type">
+                Concept Study
+              </span>
 
-  width: 100%;
-}
+              <span class="project-title">
+                Commercial Feature
+              </span>
 
-.hero-copy {
-  max-width: 780px;
-}
+              <span class="project-action">
+                View concept
+              </span>
 
-.hero-copy h1 {
-  max-width: 780px;
+            </span>
 
-  margin: 0;
+          </button>
 
-  font-size:
-    clamp(
-      3.7rem,
-      8vw,
-      7.9rem
-    );
 
-  line-height: .88;
+          <button
+            class="project-card project-card-wide"
+            type="button"
+            data-lightbox
+            data-full="assets/mockup-courtyard-water-feature.png"
+            data-alt="Courtyard water feature concept"
+          >
 
-  letter-spacing: -.058em;
+            <img
+              src="assets/mockup-courtyard-water-feature.png"
+              alt="Concept design of a courtyard water feature"
+              loading="lazy"
+            />
 
-  text-shadow:
-    0 4px 30px
-    rgba(0, 0, 0, .35);
-}
+            <span class="project-shade"></span>
 
-.hero-copy h1 em {
-  display: block;
+            <span class="project-copy">
 
-  color: var(--water-light);
+              <span class="project-type">
+                Concept Study
+              </span>
 
-  font-weight: 400;
-}
+              <span class="project-title">
+                Courtyard Water Feature
+              </span>
 
-.hero-lede {
-  max-width: 600px;
+              <span class="project-action">
+                View concept
+              </span>
 
-  margin:
-    30px 0 0;
+            </span>
 
-  color:
-    rgba(235, 235, 226, .82);
+          </button>
 
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+        </div>
 
-  font-size:
-    clamp(
-      1rem,
-      1.7vw,
-      1.18rem
-    );
+      </div>
 
-  line-height: 1.72;
-}
+    </section>
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
 
-  margin-top: 32px;
-}
+    <!-- ========================================
+         APPROACH
+         ======================================== -->
 
-.hero-note {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+    <section
+      class="philosophy-section"
+      aria-labelledby="philosophy-title"
+    >
 
-  margin-top: 38px;
-}
+      <div class="philosophy-image">
 
-.hero-note-line {
-  width: 48px;
-  height: 1px;
+        <img
+          src="assets/mockup-garden-pond.png"
+          alt=""
+          loading="lazy"
+        />
 
-  background:
-    var(--water);
-}
+        <div class="philosophy-image-shade"></div>
 
-.hero-note p {
-  margin: 0;
+      </div>
 
-  color:
-    rgba(231, 225, 211, .66);
 
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+      <div class="philosophy-content">
 
-  font-size: .75rem;
+        <p class="eyebrow">
+          The Living Waters Approach
+        </p>
 
-  letter-spacing: .045em;
-}
+        <h2 id="philosophy-title">
+          Built to feel
+          <em>found, not placed.</em>
+        </h2>
 
-.hero-note strong {
-  color: var(--ink);
-  font-weight: 650;
-}
+        <p class="philosophy-lead">
+          Water changes a space before you ever
+          touch it.
+        </p>
 
-.hero-scroll {
-  position: absolute;
+        <p>
+          The sound of a fall, the reflection of
+          trees across a pond, and the way stone
+          disappears into the landscape all matter.
+          Living Waters approaches each project as
+          part construction and part composition.
+        </p>
 
-  right: max(
-    24px,
-    calc(
-      (100vw - var(--max)) / 2
-    )
-  );
 
-  bottom: 44px;
+        <div class="philosophy-points">
 
-  z-index: 5;
+          <div>
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 9px;
+            <h3>
+              Natural Character
+            </h3>
 
-  color:
-    rgba(231, 225, 211, .62);
+            <p>
+              Stone and water arranged to complement
+              the surrounding landscape.
+            </p>
 
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+          </div>
 
-  font-size: .62rem;
-  font-weight: 700;
 
-  letter-spacing: .2em;
-  text-transform: uppercase;
-}
+          <div>
 
-.hero-scroll-mark {
-  font-size: 1.2rem;
+            <h3>
+              Intentional Flow
+            </h3>
 
-  animation:
-    water-bob 2.2s
-    ease-in-out infinite;
-}
+            <p>
+              Water movement considered for both
+              appearance and sound.
+            </p>
 
-@keyframes water-bob {
-  0%,
-  100% {
-    transform:
-      translateY(0);
-  }
-
-  50% {
-    transform:
-      translateY(7px);
-  }
-}
-
-
-/* ========================================
-   INTRO
-   ======================================== */
-
-.intro-section {
-  position: relative;
-
-  padding:
-    135px 0;
-
-  overflow: hidden;
-
-  background:
-    radial-gradient(
-      circle at 80% 30%,
-      rgba(73, 108, 104, .09),
-      transparent 28rem
-    ),
-    linear-gradient(
-      180deg,
-      #101711,
-      #0c120d
-    );
-
-  border-bottom:
-    1px solid var(--line-soft);
-}
-
-.intro-section::before {
-  content: "";
-
-  position: absolute;
-
-  inset:
-    0 0 auto 0;
-
-  height: 1px;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(158, 185, 178, .3),
-      transparent
-    );
-}
-
-.intro-grid {
-  display: grid;
-
-  grid-template-columns:
-    80px
-    minmax(0, .95fr)
-    minmax(280px, .75fr);
-
-  gap: 58px;
-
-  align-items: start;
-}
-
-.intro-heading h2 {
-  font-size:
-    clamp(
-      3rem,
-      6vw,
-      5.8rem
-    );
-}
-
-.intro-copy {
-  padding-top: 32px;
-
-  color: var(--muted);
-
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: .96rem;
-
-  line-height: 1.82;
-}
-
-.intro-copy p {
-  margin-bottom: 20px;
-}
-
-.intro-copy .intro-lead {
-  color: var(--stone-light);
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size:
-    clamp(
-      1.35rem,
-      2.2vw,
-      1.75rem
-    );
-
-  line-height: 1.42;
-}
-
-
-/* ========================================
-   SERVICES
-   ======================================== */
-
-.services-section {
-  overflow: hidden;
-
-  background:
-    linear-gradient(
-      180deg,
-      #0c120d,
-      #111912
-    );
-}
-
-.services-section::after {
-  content: "";
-
-  position: absolute;
-
-  width: 520px;
-  height: 520px;
-
-  right: -280px;
-  top: 15%;
-
-  border:
-    1px solid
-    rgba(158, 185, 178, .06);
-
-  border-radius: 50%;
-
-  box-shadow:
-    0 0 0 70px
-      rgba(158, 185, 178, .025),
-    0 0 0 140px
-      rgba(158, 185, 178, .018);
-}
-
-.section-heading {
-  position: relative;
-  z-index: 2;
-
-  display: grid;
-
-  grid-template-columns:
-    80px
-    1fr;
-
-  gap: 58px;
-
-  margin-bottom: 64px;
-}
-
-.service-grid {
-  position: relative;
-  z-index: 2;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, minmax(0, 1fr));
-
-  border-top:
-    1px solid var(--line);
-
-  border-bottom:
-    1px solid var(--line);
-}
-
-.service-card {
-  position: relative;
-
-  min-height: 390px;
-
-  display: flex;
-  flex-direction: column;
-
-  padding:
-    34px 28px 32px;
-
-  overflow: hidden;
-
-  border-right:
-    1px solid var(--line);
-
-  transition:
-    background .35s ease,
-    transform .35s var(--ease);
-}
-
-.service-card:first-child {
-  border-left:
-    1px solid var(--line);
-}
-
-.service-card::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    radial-gradient(
-      circle at 50% 20%,
-      rgba(158, 185, 178, .11),
-      transparent 52%
-    );
-
-  opacity: 0;
-
-  transition:
-    opacity .35s ease;
-}
-
-.service-card:hover {
-  background:
-    rgba(255, 255, 255, .025);
-
-  transform:
-    translateY(-4px);
-}
-
-.service-card:hover::before {
-  opacity: 1;
-}
-
-.service-number {
-  position: relative;
-  z-index: 2;
-
-  color: var(--muted);
-
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: .65rem;
-  font-weight: 700;
-
-  letter-spacing: .16em;
-}
-
-.service-icon {
-  position: relative;
-  z-index: 2;
-
-  width: 64px;
-  height: 64px;
-
-  display: grid;
-  place-items: center;
-
-  margin:
-    50px 0 30px;
-
-  color: var(--water-light);
-
-  border:
-    1px solid
-    rgba(158, 185, 178, .25);
-
-  border-radius: 50%;
-
-  background:
-    rgba(158, 185, 178, .035);
-
-  font-size: 1.6rem;
-
-  box-shadow:
-    inset 0 0 30px
-    rgba(158, 185, 178, .04);
-}
-
-.service-card h3 {
-  position: relative;
-  z-index: 2;
-
-  margin:
-    0 0 13px;
-
-  font-size: 1.45rem;
-
-  line-height: 1.18;
-}
-
-.service-card p {
-  position: relative;
-  z-index: 2;
-
-  margin:
-    0 0 26px;
-
-  color: var(--muted);
-
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: .85rem;
-
-  line-height: 1.72;
-}
-
-.text-link {
-  position: relative;
-  z-index: 2;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-
-  margin-top: auto;
-
-  color: var(--water-light);
-
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: .73rem;
-  font-weight: 700;
-
-  letter-spacing: .06em;
-}
-
-.text-link span {
-  transition:
-    transform .2s ease;
-}
-
-.text-link:hover span {
-  transform:
-    translateX(5px);
-}
-
-
-/* ========================================
-   FEATURED WORK
-   ======================================== */
-
-.work-section {
-  background:
-    #090e0a;
-}
-
-.work-heading {
-  display: grid;
-
-  grid-template-columns:
-    80px
-    minmax(0, 1fr)
-    minmax(250px, 360px);
-
-  gap: 58px;
-
-  align-items: end;
-
-  margin-bottom: 64px;
-}
-
-.work-heading-copy {
-  margin: 0 0 5px;
-
-  color: var(--muted);
-
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: .88rem;
-
-  line-height: 1.75;
-}
-
-.project-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(12, minmax(0, 1fr));
-
-  grid-auto-rows:
-    minmax(240px, 32vw);
-
-  gap: 18px;
-}
-
-.project-card {
-  position: relative;
-
-  grid-column:
-    span 5;
-
-  min-width: 0;
-
-  padding: 0;
-
-  overflow: hidden;
-
-  border:
-    1px solid
-    rgba(231, 225, 211, .12);
-
-  border-radius:
-    var(--radius);
-
-  background:
-    #111712;
-
-  text-align: left;
-
-  cursor: pointer;
-
-  box-shadow:
-    var(--shadow);
-}
-
-.project-card-large {
-  grid-column:
-    span 7;
-}
-
-.project-card-wide {
-  grid-column:
-    span 7;
-}
-
-.project-card img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  filter:
-    saturate(.82)
-    contrast(1.04)
-    brightness(.86);
-
-  transition:
-    transform .7s var(--ease),
-    filter .5s ease;
-}
-
-.project-card:hover img {
-  transform:
-    scale(1.045);
-
-  filter:
-    saturate(.95)
-    contrast(1.04)
-    brightness(.92);
-}
-
-.project-shade {
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(4, 8, 5, .04)
-      25%,
-      rgba(4, 8, 5, .84)
-      100%
-    );
-
-  transition:
-    background .35s ease;
-}
-
-.project-card:hover
-.project-shade {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(4, 8, 5, .02)
-      20%,
-      rgba(4, 8, 5, .76)
-      100%
-    );
-}
-
-.project-copy {
-  position: absolute;
-
-  inset:
-    auto 0 0 0;
-
-  display: grid;
-
-  grid-template-columns:
-    1fr auto;
-
-  gap: 5px 18px;
-
-  align-items: end;
-
-  padding:
-    28px;
-}
-
-.project-type {
-  grid-column:
-    1 / -1;
-
-  color: var(--water-light);
-
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: .62rem;
-  font-weight: 700;
-
-  letter-spacing: .18em;
-  text-transform: uppercase;
-}
-
-.project-title {
-  color: #fff;
-
-  font-size:
-    clamp(
-      1.45rem,
-      2.5vw,
-      2.25rem
-    );
-
-  line-height: 1.08;
-}
-
-.project-action {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-
-  padding-bottom: 4px;
-
-  color:
-    rgba(255, 255, 255, .72);
-
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: .67rem;
-  font-weight: 700;
-
-  letter-spacing: .05em;
-}
-
-
-/* ========================================
-   PHILOSOPHY
-   ======================================== */
-
-.philosophy-section {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1.05fr)
-    minmax(420px, .95fr);
-
-  min-height: 760px;
-
-  background:
-    #121a13;
-}
-
-.philosophy-image {
-  position: relative;
-
-  min-height: 680px;
-
-  overflow: hidden;
-}
-
-.philosophy-image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  filter:
-    saturate(.78)
-    contrast(1.04)
-    brightness(.78);
-}
-
-.philosophy-image-shade {
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent 60%,
-      rgba(18, 26, 19, .88)
-      100%
-    ),
-    linear-gradient(
-      180deg,
-      transparent 50%,
-      rgba(8, 13, 9, .35)
-    );
-}
-
-.philosophy-content {
-  align-self: center;
-
-  max-width: 630px;
-
-  padding:
-    100px 70px;
-}
-
-.philosophy-content h2 {
-  margin-bottom: 34px;
-
-  font-size:
-    clamp(
-      3rem,
-      5vw,
-      5.4rem
-    );
-}
-
-.philosophy-lead {
-  margin-bottom: 18px;
-
-  color: var(--stone-light);
-
-  font-size: 1.4rem;
-
-  line-height: 1.4;
-}
-
-.philosophy-content > p:not(
-  .eyebrow
-):not(
-  .philosophy-lead
-) {
-  color: var(--muted);
-
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: .9rem;
-
-  line-height: 1.8;
-}
-
-.philosophy-points {
-  display: grid;
-  gap: 0;
-
-  margin-top: 42px;
-
-  border-top:
-    1px solid var(--line);
-}
-
-.philosophy-points > div {
-  display: grid;
-
-  grid-template-columns:
-    18px 1fr;
-
-  gap: 17px;
-
-  padding:
-    21px 0;
-
-  border-bottom:
-    1px solid var(--line);
-}
-
-.point-mark {
-  width: 8px;
-  height: 8px;
-
-  margin-top: 8px;
-
-  border:
-    1px solid var(--water);
-
-  border-radius: 50%;
-
-  box-shadow:
-    0 0 0 4px
-    rgba(158, 185, 178, .05);
-}
-
-.philosophy-points h3 {
-  margin:
-    0 0 5px;
-
-  font-size: 1rem;
-}
-
-.philosophy-points p {
-  margin: 0;
-
-  color: var(--muted);
-
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: .8rem;
-
-  line-height: 1.6;
-}
-
-
-/* ========================================
-   PROCESS
-   ======================================== */
-
-.process-section {
-  overflow: hidden;
-
-  background:
-    linear-gradient(
-      180deg,
-      #0c120d,
-      #101711
-    );
-}
-
-.process-heading {
-  display: grid;
-
-  grid-template-columns:
-    80px 1fr;
-
-  gap: 58px;
-
-  margin-bottom: 70px;
-}
-
-.process-list {
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
-
-  border-top:
-    1px solid var(--line);
-}
-
-.process-step {
-  display: grid;
-
-  grid-template-columns:
-    100px
-    minmax(0, 1fr);
-
-  gap: 34px;
-
-  padding:
-    34px 20px 34px 0;
-
-  border-bottom:
-    1px solid var(--line);
-
-  transition:
-    padding-left .25s var(--ease),
-    background .25s ease;
-}
-
-.process-step:hover {
-  padding-left: 16px;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(158, 185, 178, .035),
-      transparent
-    );
-}
-
-.process-number {
-  color: var(--water);
-
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: .72rem;
-  font-weight: 700;
-
-  letter-spacing: .15em;
-}
-
-.process-step > div {
-  display: grid;
-
-  grid-template-columns:
-    minmax(220px, .75fr)
-    minmax(280px, 1fr);
-
-  gap: 50px;
-}
-
-.process-step h3 {
-  margin: 0;
-
-  font-size:
-    clamp(
-      1.45rem,
-      2.5vw,
-      2rem
-    );
-
-  line-height: 1.2;
-}
-
-.process-step p {
-  max-width: 620px;
-
-  margin: 0;
-
-  color: var(--muted);
-
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: .87rem;
-
-  line-height: 1.75;
-}
-
-
-/* ========================================
-   SERVICE AREA
-   ======================================== */
-
-.service-area-section {
-  position: relative;
-
-  padding:
-    130px 0;
-
-  overflow: hidden;
-
-  background:
-    #182219;
-
-  border-top:
-    1px solid var(--line-soft);
-
-  border-bottom:
-    1px solid var(--line-soft);
-}
-
-.service-area-grid {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, .85fr)
-    minmax(360px, 1.15fr);
-
-  gap: 80px;
-
-  align-items: center;
-}
-
-.service-area-copy {
-  position: relative;
-  z-index: 4;
-}
-
-.service-area-copy h2 {
-  margin-bottom: 30px;
-
-  font-size:
-    clamp(
-      3rem,
-      5vw,
-      5.3rem
-    );
-}
-
-.service-area-copy p {
-  max-width: 580px;
-
-  color: var(--muted);
-
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: .9rem;
-
-  line-height: 1.78;
-}
-
-.service-area-copy .button {
-  margin-top: 16px;
-}
-
-.service-area-art {
-  position: relative;
-
-  min-height: 480px;
-
-  overflow: hidden;
-
-  border:
-    1px solid
-    rgba(158, 185, 178, .13);
-
-  border-radius:
-    50% 44% 52% 48% /
-    47% 54% 46% 53%;
-
-  background:
-    radial-gradient(
-      circle at 50% 50%,
-      rgba(158, 185, 178, .08),
-      rgba(8, 13, 9, .14)
-    );
-
-  box-shadow:
-    inset 0 0 90px
-    rgba(0, 0, 0, .25);
-}
-
-.service-area-art::before,
-.service-area-art::after,
-.topo {
-  content: "";
-
-  position: absolute;
-
-  border:
-    1px solid
-    rgba(158, 185, 178, .14);
-
-  border-radius:
-    46% 54% 42% 58% /
-    53% 42% 58% 47%;
-
-  transform: rotate(-8deg);
-}
-
-.service-area-art::before {
-  inset: 8%;
-}
-
-.service-area-art::after {
-  inset: 17%;
-
-  transform: rotate(11deg);
-}
-
-.topo-one {
-  inset: 26%;
-
-  transform: rotate(-16deg);
-}
-
-.topo-two {
-  inset: 34%;
-
-  transform: rotate(18deg);
-}
-
-.topo-three {
-  inset: 42%;
-
-  transform: rotate(-4deg);
-}
-
-.service-area-mark {
-  position: absolute;
-
-  inset: 50% auto auto 50%;
-
-  z-index: 5;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-
-  transform:
-    translate(-50%, -50%);
-}
-
-.service-area-mark img {
-  width: 82px;
-  height: 82px;
-
-  object-fit: cover;
-
-  border-radius: 50%;
-
-  box-shadow:
-    0 16px 45px
-    rgba(0, 0, 0, .35);
-}
-
-.service-area-mark span {
-  color: var(--stone-light);
-
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: .68rem;
-  font-weight: 700;
-
-  letter-spacing: .16em;
-  text-transform: uppercase;
-}
-
-
-/* ========================================
-   CTA
-   ======================================== */
-
-.cta-section {
-  position: relative;
-
-  min-height: 680px;
-
-  display: flex;
-  align-items: center;
-
-  overflow: hidden;
-}
-
-.cta-background,
-.cta-shade {
-  position: absolute;
-  inset: 0;
-}
-
-.cta-background img {
-  width: 100%;
-  height: 100%;
+          </div>
 
-  object-fit: cover;
 
-  filter:
-    saturate(.78)
-    contrast(1.06)
-    brightness(.68);
-}
+          <div>
 
-.cta-shade {
-  background:
-    linear-gradient(
-      90deg,
-      rgba(5, 9, 6, .92)
-      0%,
-      rgba(5, 9, 6, .75)
-      48%,
-      rgba(5, 9, 6, .34)
-      100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(5, 9, 6, .18),
-      rgba(5, 9, 6, .48)
-    );
-}
+            <h3>
+              Built for the Space
+            </h3>
 
-.cta-content {
-  position: relative;
-  z-index: 3;
-}
+            <p>
+              Every project begins with the
+              property rather than a template.
+            </p>
 
-.cta-content h2 {
-  max-width: 720px;
+          </div>
 
-  font-size:
-    clamp(
-      3.7rem,
-      7vw,
-      7rem
-    );
+        </div>
 
-  text-shadow:
-    0 5px 30px
-    rgba(0, 0, 0, .3);
-}
+      </div>
 
-.cta-content p:not(
-  .eyebrow
-) {
-  max-width: 570px;
+    </section>
 
-  margin:
-    28px 0 0;
 
-  color:
-    rgba(240, 239, 231, .78);
+    <!-- ========================================
+         PROCESS
+         ======================================== -->
 
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+    <section
+      class="section process-section"
+      id="process"
+      aria-labelledby="process-title"
+    >
 
-  font-size: .96rem;
+      <div class="container">
 
-  line-height: 1.75;
-}
+        <div class="process-heading">
 
-.cta-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+          <p class="eyebrow">
+            From Idea to Water
+          </p>
 
-  margin-top: 32px;
-}
+          <h2 id="process-title">
+            A straightforward
+            <em>process.</em>
+          </h2>
 
+        </div>
 
-/* ========================================
-   CONTACT
-   ======================================== */
 
-.contact-section {
-  background:
-    linear-gradient(
-      180deg,
-      #0b110c,
-      #080d09
-    );
-}
+        <div class="process-list">
 
-.contact-layout {
-  display: grid;
+          <article class="process-step">
 
-  grid-template-columns:
-    minmax(0, .9fr)
-    minmax(380px, 1fr);
+            <h3>
+              Start with a conversation
+            </h3>
 
-  gap: 90px;
+            <p>
+              Tell Tyler about the space, what you
+              have in mind, your general budget,
+              and what you want the finished
+              feature to feel like.
+            </p>
 
-  align-items: start;
-}
+          </article>
 
-.contact-intro .section-marker {
-  margin-bottom: 48px;
-}
 
-.contact-intro h2 {
-  margin-bottom: 30px;
+          <article class="process-step">
 
-  font-size:
-    clamp(
-      3rem,
-      5.5vw,
-      5.6rem
-    );
-}
+            <h3>
+              Walk the site
+            </h3>
 
-.contact-intro > p:not(
-  .eyebrow
-) {
-  max-width: 520px;
+            <p>
+              Placement, terrain, water movement,
+              stone character, and practical
+              constraints are considered before
+              the build begins.
+            </p>
 
-  color: var(--muted);
+          </article>
 
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
 
-  font-size: .9rem;
+          <article class="process-step">
 
-  line-height: 1.8;
-}
+            <h3>
+              Shape the feature
+            </h3>
 
-.contact-panel {
-  border-top:
-    1px solid var(--line);
+            <p>
+              The stonework and water feature are
+              built around the site rather than
+              forcing the site around a generic
+              design.
+            </p>
 
-  border-bottom:
-    1px solid var(--line);
-}
+          </article>
 
-.contact-method {
-  display: grid;
 
-  grid-template-columns:
-    50px 1fr auto;
+          <article class="process-step">
 
-  gap: 18px;
+            <h3>
+              Tune the water
+            </h3>
 
-  align-items: center;
+            <p>
+              Flow, splash, and sound are adjusted
+              until the finished feature looks and
+              feels right in the space.
+            </p>
 
-  padding:
-    25px 8px;
+          </article>
 
-  border-bottom:
-    1px solid var(--line);
+        </div>
 
-  transition:
-    padding-left .25s var(--ease),
-    background .25s ease;
-}
+      </div>
 
-.contact-method:hover {
-  padding-left: 18px;
+    </section>
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(158, 185, 178, .045),
-      transparent
-    );
-}
 
-.contact-method-icon {
-  width: 44px;
-  height: 44px;
+    <!-- ========================================
+         SERVICE AREA
+         ======================================== -->
 
-  display: grid;
-  place-items: center;
+    <section
+      class="service-area-section"
+      id="service-area"
+      aria-labelledby="service-area-title"
+    >
 
-  color: var(--water-light);
+      <div class="container service-area-grid">
 
-  border:
-    1px solid
-    rgba(158, 185, 178, .2);
+        <div class="service-area-copy">
 
-  border-radius: 50%;
+          <p class="eyebrow">
+            North Georgia
+          </p>
 
-  font-size: 1rem;
-}
+          <h2 id="service-area-title">
+            Crafted for
+            <em>mountain country.</em>
+          </h2>
 
-.contact-method-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
+          <p>
+            Living Waters Aquascapes serves
+            homeowners and businesses throughout
+            North Georgia and the Blue Ridge area.
+          </p>
 
-.contact-label {
-  color: var(--muted);
+          <p>
+            Have a property outside the immediate
+            area? Reach out with your location and
+            project details to see whether it is a
+            good fit.
+          </p>
 
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+          <a
+            class="button button-secondary"
+            href="#contact"
+          >
+            Ask About Your Property
+          </a>
 
-  font-size: .62rem;
-  font-weight: 700;
+        </div>
 
-  letter-spacing: .16em;
-  text-transform: uppercase;
-}
 
-.contact-method strong {
-  color: var(--ink);
+        <div class="service-area-visual">
 
-  font-size: 1.15rem;
-  font-weight: 400;
-}
+          <img
+            src="assets/LW-icon.png"
+            alt="Living Waters Aquascapes"
+            loading="lazy"
+          />
 
-.contact-arrow {
-  color: var(--water);
+          <p>
+            Handcrafted in
+            <strong>North Georgia</strong>
+          </p>
 
-  transition:
-    transform .2s ease;
-}
+        </div>
 
-.contact-method:hover
-.contact-arrow {
-  transform:
-    translateX(5px);
-}
+      </div>
 
-.contact-help {
-  padding:
-    28px 8px 30px;
-}
+    </section>
 
-.contact-help p {
-  margin:
-    0 0 14px;
 
-  color: var(--stone-light);
+    <!-- ========================================
+         CTA
+         ======================================== -->
 
-  font-size: .9rem;
-}
+    <section
+      class="cta-section"
+      aria-labelledby="cta-title"
+    >
 
-.contact-help ul {
-  display: grid;
-  gap: 8px;
+      <div class="cta-background">
 
-  margin: 0;
-  padding-left: 20px;
+        <img
+          src="assets/mockup-courtyard-water-feature.png"
+          alt=""
+          loading="lazy"
+        />
 
-  color: var(--muted);
+      </div>
 
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+      <div class="cta-shade"></div>
 
-  font-size: .82rem;
-}
 
+      <div class="container cta-content">
 
-/* ========================================
-   FOOTER
-   ======================================== */
+        <p class="eyebrow">
+          Have a Space in Mind?
+        </p>
 
-.site-footer {
-  position: relative;
+        <h2 id="cta-title">
+          Let's make it
+          <em>come alive.</em>
+        </h2>
 
-  padding:
-    74px 0 24px;
+        <p>
+          Tell Tyler what you are imagining and
+          where the project is located. A few photos
+          of the space are a great place to start.
+        </p>
 
-  background:
-    #070b08;
 
-  border-top:
-    1px solid var(--line-soft);
-}
+        <div class="cta-actions">
 
-.footer-main {
-  display: grid;
+          <a
+            class="button button-primary"
+            href="tel:+17622398229"
+          >
+            Call Living Waters
+          </a>
 
-  grid-template-columns:
-    minmax(0, 1.5fr)
-    minmax(150px, .5fr)
-    minmax(210px, .65fr);
+          <a
+            class="button button-secondary-light"
+            href="sms:+17622398229"
+          >
+            Send a Text
+          </a>
 
-  gap: 70px;
+        </div>
 
-  padding-bottom: 60px;
-}
+      </div>
 
-.brand-footer {
-  margin-bottom: 22px;
-}
+    </section>
 
-.footer-brand > p {
-  max-width: 420px;
 
-  margin: 0;
+    <!-- ========================================
+         CONTACT
+         ======================================== -->
 
-  color: var(--muted);
+    <section
+      class="section contact-section"
+      id="contact"
+      aria-labelledby="contact-title"
+    >
 
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+      <div class="container contact-layout">
 
-  font-size: .8rem;
+        <div class="contact-intro">
 
-  line-height: 1.7;
-}
+          <p class="eyebrow">
+            Start a Conversation
+          </p>
 
-.footer-nav,
-.footer-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+          <h2 id="contact-title">
+            Tell us about
+            <em>the space.</em>
+          </h2>
 
-.footer-label {
-  margin:
-    0 0 8px;
+          <p>
+            Call or text Tyler directly. If you
+            already have photos of the property,
+            send them along with the kind of feature
+            you are considering.
+          </p>
 
-  color: var(--water-light);
+        </div>
 
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
 
-  font-size: .62rem;
-  font-weight: 750;
+        <div class="contact-panel">
 
-  letter-spacing: .18em;
-  text-transform: uppercase;
-}
+          <a
+            class="contact-method"
+            href="tel:+17622398229"
+          >
 
-.footer-nav a,
-.footer-contact a,
-.footer-contact span {
-  color: var(--muted);
+            <span class="contact-label">
+              Call Tyler
+            </span>
 
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+            <strong>
+              (762) 239-8229
+            </strong>
 
-  font-size: .8rem;
+          </a>
 
-  transition:
-    color .2s ease;
-}
 
-.footer-nav a:hover,
-.footer-contact a:hover {
-  color: var(--ink);
-}
+          <a
+            class="contact-method"
+            href="sms:+17622398229"
+          >
 
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
+            <span class="contact-label">
+              Text Tyler
+            </span>
 
-  padding-top: 22px;
+            <strong>
+              Send project details
+            </strong>
 
-  border-top:
-    1px solid var(--line-soft);
-}
+          </a>
 
-.footer-bottom p {
-  margin: 0;
 
-  color:
-    rgba(159, 164, 155, .68);
+          <div class="contact-help">
 
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+            <p>
+              <strong>
+                Helpful things to include
+              </strong>
+            </p>
 
-  font-size: .68rem;
-}
+            <ul>
 
-.site-credit a {
-  color: var(--stone-light);
+              <li>
+                Your city or nearest town
+              </li>
 
-  transition:
-    color .2s ease;
-}
+              <li>
+                The type of water feature
+              </li>
 
-.site-credit a:hover {
-  color: var(--water-light);
-}
+              <li>
+                Photos of the space
+              </li>
 
+              <li>
+                Your ideal timing
+              </li>
 
-/* ========================================
-   LIGHTBOX
-   ======================================== */
+            </ul>
 
-.lightbox {
-  position: fixed;
-  inset: 0;
+          </div>
 
-  z-index: 5000;
+        </div>
 
-  display: grid;
-  place-items: center;
+      </div>
 
-  padding: 28px;
+    </section>
 
-  visibility: hidden;
-  opacity: 0;
 
-  transition:
-    opacity .25s ease,
-    visibility .25s ease;
-}
+  </main>
 
-.lightbox.active {
-  visibility: visible;
-  opacity: 1;
-}
 
-.lightbox-backdrop {
-  position: absolute;
-  inset: 0;
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
 
-  background:
-    rgba(3, 6, 4, .91);
+  <footer class="site-footer">
 
-  backdrop-filter:
-    blur(12px);
+    <div class="container footer-main">
 
-  -webkit-backdrop-filter:
-    blur(12px);
-}
+      <div class="footer-brand">
 
-.lightbox-panel {
-  position: relative;
-  z-index: 2;
+        <a
+          class="brand brand-footer"
+          href="#top"
+          aria-label="Living Waters Aquascapes home"
+        >
 
-  width:
-    min(1100px, 100%);
+          <img
+            class="brand-mark"
+            src="assets/LW-icon.png"
+            alt=""
+            width="64"
+            height="64"
+            loading="lazy"
+          />
 
-  max-height:
-    calc(100svh - 56px);
+          <span class="brand-copy">
 
-  padding: 12px;
+            <span class="brand-name">
+              Living Waters
+            </span>
 
-  overflow: auto;
+            <span class="brand-sub">
+              Aquascapes
+            </span>
 
-  background:
-    #0d130e;
+          </span>
 
-  border:
-    1px solid
-    rgba(231, 225, 211, .14);
+        </a>
 
-  border-radius:
-    var(--radius);
+        <p>
+          Handcrafted stone and water features
+          throughout North Georgia and the
+          Blue Ridge area.
+        </p>
 
-  box-shadow:
-    var(--shadow-heavy);
+      </div>
 
-  transform:
-    translateY(14px)
-    scale(.985);
 
-  transition:
-    transform .3s var(--ease);
-}
+      <div class="footer-nav">
 
-.lightbox.active
-.lightbox-panel {
-  transform:
-    translateY(0)
-    scale(1);
-}
+        <p class="footer-label">
+          Explore
+        </p>
 
-.lightbox-image {
-  width: 100%;
-  max-height:
-    calc(100svh - 145px);
+        <a href="#services">
+          Services
+        </a>
 
-  object-fit: contain;
+        <a href="#work">
+          Our Work
+        </a>
 
-  border-radius:
-    calc(
-      var(--radius) - 8px
-    );
-}
+        <a href="#process">
+          Process
+        </a>
 
-.lightbox-close {
-  position: absolute;
+        <a href="#service-area">
+          Service Area
+        </a>
 
-  top: 22px;
-  right: 22px;
+      </div>
 
-  z-index: 5;
 
-  width: 44px;
-  height: 44px;
+      <div class="footer-contact">
 
-  display: grid;
-  place-items: center;
+        <p class="footer-label">
+          Start a Project
+        </p>
 
-  padding: 0;
+        <a href="tel:+17622398229">
+          (762) 239-8229
+        </a>
 
-  color: #fff;
+        <a href="sms:+17622398229">
+          Send a Text
+        </a>
 
-  background:
-    rgba(7, 12, 8, .75);
+        <span>
+          North Georgia • Blue Ridge
+        </span>
 
-  border:
-    1px solid
-    rgba(255, 255, 255, .2);
+      </div>
 
-  border-radius: 50%;
+    </div>
 
-  backdrop-filter:
-    blur(10px);
 
-  cursor: pointer;
+    <div class="container footer-bottom">
 
-  font-size: 1.5rem;
-  line-height: 1;
-}
+      <p>
+        © <span id="currentYear"></span>
+        Living Waters Aquascapes
+      </p>
 
-.lightbox-caption {
-  margin:
-    10px 4px 2px;
+      <p class="site-credit">
 
-  color: var(--muted);
+        Website by
 
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+        <a
+          href="https://blackstagweb.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Black Stag Web Design
+        </a>
 
-  font-size: .76rem;
-}
+      </p>
 
+    </div>
 
-/* ========================================
-   TABLET
-   ======================================== */
+  </footer>
 
-@media (
-  max-width: 1000px
-) {
 
-  :root {
-    --header-height:
-      76px;
-  }
-
-  .section {
-    padding:
-      95px 0;
-  }
-
-  .header-inner {
-    width:
-      min(
-        calc(100% - 36px),
-        var(--max)
-      );
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-
-  .site-nav {
-    position: fixed;
-
-    top:
-      var(--header-height);
-
-    left: 0;
-    right: 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-
-    gap: 0;
-
-    padding:
-      18px;
-
-    background:
-      rgba(7, 12, 8, .97);
-
-    border-bottom:
-      1px solid var(--line);
-
-    box-shadow:
-      0 24px 60px
-      rgba(0, 0, 0, .4);
-
-    backdrop-filter:
-      blur(18px);
-
-    -webkit-backdrop-filter:
-      blur(18px);
-
-    transform:
-      translateY(-130%);
-
-    visibility: hidden;
-
-    transition:
-      transform .3s var(--ease),
-      visibility .3s ease;
-  }
-
-  .site-nav.open {
-    transform:
-      translateY(0);
-
-    visibility: visible;
-  }
-
-  .site-nav > a {
-    padding:
-      15px 12px;
-
-    border-bottom:
-      1px solid var(--line-soft);
-
-    font-size: .8rem;
-  }
-
-  .site-nav > a::after {
-    display: none;
-  }
-
-  .site-nav .nav-cta {
-    margin:
-      14px 0 0;
-
-    border-bottom: 0;
-
-    text-align: center;
-  }
-
-  .nav-toggle[aria-expanded="true"]
-  span:nth-child(1) {
-    transform:
-      translateY(6px)
-      rotate(45deg);
-  }
-
-  .nav-toggle[aria-expanded="true"]
-  span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .nav-toggle[aria-expanded="true"]
-  span:nth-child(3) {
-    transform:
-      translateY(-6px)
-      rotate(-45deg);
-  }
-
-  .hero {
-    min-height:
-      860px;
-
-    padding-bottom:
-      90px;
-  }
-
-  .hero-shade {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(5, 9, 6, .88),
-        rgba(5, 9, 6, .46)
-      ),
-      linear-gradient(
-        180deg,
-        rgba(5, 9, 6, .28),
-        rgba(5, 9, 6, .74)
-      );
-  }
-
-  .hero-copy h1 {
-    font-size:
-      clamp(
-        3.6rem,
-        10vw,
-        6.6rem
-      );
-  }
-
-  .intro-grid {
-    grid-template-columns:
-      55px 1fr;
-
-    gap: 34px;
-  }
-
-  .intro-copy {
-    grid-column:
-      2;
-  }
-
-  .section-heading,
-  .process-heading {
-    grid-template-columns:
-      55px 1fr;
-
-    gap: 34px;
-  }
-
-  .service-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
-
-  .service-card:nth-child(2) {
-    border-right:
-      1px solid var(--line);
-  }
-
-  .service-card:nth-child(3),
-  .service-card:nth-child(4) {
-    border-top:
-      1px solid var(--line);
-  }
-
-  .work-heading {
-    grid-template-columns:
-      55px 1fr;
-
-    gap: 34px;
-  }
-
-  .work-heading-copy {
-    grid-column:
-      2;
-
-    max-width: 600px;
-  }
-
-  .project-grid {
-    grid-auto-rows:
-      minmax(300px, 48vw);
-  }
-
-  .project-card,
-  .project-card-large,
-  .project-card-wide {
-    grid-column:
-      span 6;
-  }
-
-  .philosophy-section {
-    grid-template-columns:
-      1fr;
-  }
-
-  .philosophy-image {
-    min-height:
-      560px;
-  }
-
-  .philosophy-image-shade {
-    background:
-      linear-gradient(
-        180deg,
-        transparent 60%,
-        #121a13 100%
-      );
-  }
-
-  .philosophy-content {
-    max-width:
-      800px;
-
-    padding:
-      80px 48px 100px;
-  }
-
-  .process-step > div {
-    grid-template-columns:
-      1fr;
-
-    gap: 12px;
-  }
-
-  .service-area-grid {
-    grid-template-columns:
-      1fr;
-
-    gap: 65px;
-  }
-
-  .service-area-art {
-    width:
-      min(
-        620px,
-        100%
-      );
-
-    margin-inline: auto;
-  }
-
-  .contact-layout {
-    grid-template-columns:
-      1fr;
-
-    gap: 65px;
-  }
-
-}
-
-
-/* ========================================
-   MOBILE
-   ======================================== */
-
-@media (
-  max-width: 680px
-) {
-
-  :root {
-    --header-height:
-      70px;
-  }
-
-  .container {
-    width:
-      min(
-        calc(100% - 32px),
-        var(--max)
-      );
-  }
-
-  .section {
-    padding:
-      82px 0;
-  }
-
-  .header-inner {
-    width:
-      calc(100% - 28px);
-  }
-
-  .brand {
-    gap: 9px;
-  }
-
-  .brand-mark {
-    width: 42px;
-    height: 42px;
-  }
-
-  .brand-name {
-    font-size: .9rem;
-  }
-
-  .brand-sub {
-    font-size: .54rem;
-  }
-
-  .nav-toggle {
-    width: 42px;
-    height: 42px;
-  }
-
-  .hero {
-    min-height:
-      100svh;
-
-    align-items: flex-end;
-
-    padding:
-      calc(
-        var(--header-height) + 80px
-      )
-      0
-      80px;
-  }
-
-  .hero-backdrop-image {
-    object-position:
-      60% center;
-  }
-
-  .hero-shade {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(5, 9, 6, .25)
-        0%,
-        rgba(5, 9, 6, .38)
-        30%,
-        rgba(5, 9, 6, .91)
-        82%,
-        rgba(5, 9, 6, .97)
-        100%
-      );
-  }
-
-  .hero-copy h1 {
-    font-size:
-      clamp(
-        3.35rem,
-        16vw,
-        5.3rem
-      );
-
-    line-height: .9;
-  }
-
-  .hero-lede {
-    margin-top:
-      24px;
-
-    font-size: .94rem;
-  }
-
-  .hero-actions {
-    flex-direction:
-      column;
-
-    align-items:
-      stretch;
-
-    margin-top:
-      28px;
-  }
-
-  .button {
-    width: 100%;
-  }
-
-  .hero-note {
-    margin-top:
-      28px;
-  }
-
-  .hero-scroll {
-    display: none;
-  }
-
-  .intro-section {
-    padding:
-      90px 0;
-  }
-
-  .intro-grid,
-  .section-heading,
-  .process-heading,
-  .work-heading {
-    grid-template-columns:
-      1fr;
-
-    gap: 25px;
-  }
-
-  .intro-grid
-  .section-marker,
-  .section-heading
-  .section-marker,
-  .process-heading
-  .section-marker,
-  .work-heading
-  .section-marker {
-    margin-bottom:
-      2px;
-  }
-
-  .intro-copy,
-  .work-heading-copy {
-    grid-column:
-      auto;
-  }
-
-  .intro-copy {
-    padding-top: 0;
-  }
-
-  .intro-heading h2,
-  .section h2,
-  .philosophy-content h2,
-  .service-area-copy h2,
-  .contact-intro h2 {
-    font-size:
-      clamp(
-        2.7rem,
-        13vw,
-        4.2rem
-      );
-  }
-
-  .service-grid {
-    grid-template-columns:
-      1fr;
-
-    border-bottom: 0;
-  }
-
-  .service-card {
-    min-height:
-      auto;
-
-    padding:
-      28px 22px 30px;
-
-    border-left:
-      1px solid var(--line);
-
-    border-right:
-      1px solid var(--line);
-
-    border-bottom:
-      1px solid var(--line);
-  }
-
-  .service-card:first-child {
-    border-left:
-      1px solid var(--line);
-  }
-
-  .service-card:nth-child(3),
-  .service-card:nth-child(4) {
-    border-top: 0;
-  }
-
-  .service-icon {
-    margin:
-      34px 0 25px;
-  }
-
-  .project-grid {
-    display: grid;
-
-    grid-template-columns:
-      1fr;
-
-    grid-auto-rows:
-      auto;
-
-    gap: 14px;
-  }
-
-  .project-card,
-  .project-card-large,
-  .project-card-wide {
-    grid-column:
-      auto;
-
-    aspect-ratio:
-      4 / 5;
-  }
-
-  .project-card-wide {
-    aspect-ratio:
-      4 / 3;
-  }
-
-  .project-copy {
-    grid-template-columns:
-      1fr;
-
-    padding: 22px;
-  }
-
-  .project-action {
-    margin-top: 5px;
-  }
-
-  .philosophy-image {
-    min-height:
-      440px;
-  }
-
-  .philosophy-content {
-    padding:
-      70px 24px 84px;
-  }
-
-  .philosophy-content h2 {
-    margin-bottom:
-      28px;
-  }
-
-  .process-step {
-    grid-template-columns:
-      50px 1fr;
-
-    gap: 12px;
-
-    padding:
-      27px 0;
-  }
-
-  .process-step:hover {
-    padding-left: 0;
-  }
-
-  .process-step > div {
-    gap: 8px;
-  }
-
-  .process-step h3 {
-    font-size: 1.35rem;
-  }
+  <!-- ========================================
+       LIGHTBOX
+       ======================================== -->
 
-  .service-area-section {
-    padding:
-      90px 0;
-  }
-
-  .service-area-grid {
-    gap: 55px;
-  }
-
-  .service-area-copy .button {
-    margin-top:
-      14px;
-  }
-
-  .service-area-art {
-    min-height:
-      330px;
-  }
-
-  .service-area-mark img {
-    width: 66px;
-    height: 66px;
-  }
-
-  .cta-section {
-    min-height:
-      690px;
-
-    align-items:
-      flex-end;
-
-    padding:
-      90px 0;
-  }
-
-  .cta-background img {
-    object-position:
-      center;
-  }
-
-  .cta-shade {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(5, 9, 6, .22),
-        rgba(5, 9, 6, .92)
-        70%,
-        rgba(5, 9, 6, .98)
-      );
-  }
-
-  .cta-content h2 {
-    font-size:
-      clamp(
-        3.3rem,
-        15vw,
-        5rem
-      );
-  }
-
-  .cta-actions {
-    flex-direction:
-      column;
-  }
-
-  .contact-layout {
-    gap: 50px;
-  }
-
-  .contact-intro
-  .section-marker {
-    margin-bottom:
-      28px;
-  }
-
-  .contact-method {
-    grid-template-columns:
-      44px 1fr auto;
-
-    gap: 13px;
-
-    padding:
-      21px 2px;
-  }
-
-  .contact-method:hover {
-    padding-left: 2px;
-  }
-
-  .contact-method-icon {
-    width: 40px;
-    height: 40px;
-  }
-
-  .contact-method strong {
-    font-size: 1rem;
-  }
-
-  .footer-main {
-    grid-template-columns:
-      1fr;
-
-    gap: 42px;
-
-    padding-bottom:
-      45px;
-  }
-
-  .footer-bottom {
-    flex-direction:
-      column;
-
-    gap: 9px;
-  }
-
-  .lightbox {
-    padding: 12px;
-  }
-
-  .lightbox-panel {
-    max-height:
-      calc(
-        100svh - 24px
-      );
-  }
-
-  .lightbox-close {
-    top: 18px;
-    right: 18px;
-  }
+  <div
+    class="lightbox"
+    id="projectLightbox"
+    aria-hidden="true"
+  >
 
-}
+    <div
+      class="lightbox-backdrop"
+      data-lightbox-close
+    ></div>
 
+    <div
+      class="lightbox-panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="lightboxCaption"
+    >
 
-/* ========================================
-   VERY SMALL MOBILE
-   ======================================== */
+      <button
+        class="lightbox-close"
+        type="button"
+        aria-label="Close image"
+        data-lightbox-close
+      >
+        <span aria-hidden="true">
+          ×
+        </span>
+      </button>
 
-@media (
-  max-width: 390px
-) {
+      <img
+        class="lightbox-image"
+        id="lightboxImage"
+        src=""
+        alt=""
+      />
 
-  .brand-sub {
-    letter-spacing:
-      .15em;
-  }
-
-  .hero-copy h1 {
-    font-size:
-      3.2rem;
-  }
-
-  .hero-note-line {
-    width: 32px;
-  }
-
-  .process-step {
-    grid-template-columns:
-      38px 1fr;
-  }
-
-}
+      <p
+        class="lightbox-caption"
+        id="lightboxCaption"
+      ></p>
 
+    </div>
 
-/* ========================================
-   HOVER-SAFE DEVICES
-   ======================================== */
+  </div>
 
-@media (
-  hover: none
-) {
 
-  .service-card:hover,
-  .button:hover,
-  .project-card:hover,
-  .process-step:hover {
-    transform: none;
-  }
-
-}
-
-
-/* ========================================
-   REDUCED MOTION
-   ======================================== */
+  <script
+    src="script.js?v=20260924-1"
+    defer
+  ></script>
 
-@media (
-  prefers-reduced-motion: reduce
-) {
-
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-
-    animation-duration:
-      .01ms !important;
-
-    animation-iteration-count:
-      1 !important;
-
-    transition-duration:
-      .01ms !important;
-  }
+</body>
 
-}
+</html>
