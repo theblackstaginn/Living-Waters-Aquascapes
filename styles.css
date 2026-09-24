@@ -1,1299 +1,2975 @@
-<!doctype html>
-<html lang="en">
+/* ========================================
+   LIVING WATERS AQUASCAPES
+   styles.css
 
-<head>
-  <meta charset="utf-8" />
+   Sunlit woodland • river stone • moss • water
+   ======================================== */
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  />
 
-  <title>
-    Living Waters Aquascapes | Ponds, Waterfalls & Stonework in North Georgia
-  </title>
+/* ========================================
+   VARIABLES
+   ======================================== */
 
-  <meta
-    name="description"
-    content="Living Waters Aquascapes creates handcrafted ponds, waterfalls, stone features, hot tub integrations, and commercial water features throughout North Georgia and the Blue Ridge area."
-  />
+:root {
+  --cream: #f0eee5;
+  --cream-soft: #e8e7dd;
+  --cream-deep: #dbddd0;
 
-  <meta
-    name="robots"
-    content="index,follow,max-image-preview:large"
-  />
+  --sage: #cdd4c3;
+  --sage-soft: #dfe3d7;
+  --sage-deep: #aebba4;
 
-  <meta
-    name="theme-color"
-    content="#e4e1d5"
-  />
+  --moss: #68765b;
+  --moss-light: #859579;
+  --moss-deep: #465440;
 
-  <link
-    rel="canonical"
-    href="https://theblackstaginn.github.io/Living-Waters-Aquascapes/"
-  />
+  --water: #719d9b;
+  --water-light: #a7c9c6;
+  --water-pale: #d5e5e1;
+  --water-deep: #456f70;
 
-  <link
-    rel="icon"
-    type="image/png"
-    href="assets/LW-icon.png"
-  />
+  --stone: #9a998d;
+  --stone-light: #cac8ba;
+  --stone-dark: #66685f;
 
-  <link
-    rel="apple-touch-icon"
-    href="assets/LW-icon.png"
-  />
+  --forest: #25352c;
+  --forest-soft: #34483b;
+  --forest-deep: #17241d;
+  --forest-black: #0e1712;
 
-  <meta
-    property="og:type"
-    content="website"
-  />
+  --ink: #253129;
+  --ink-soft: #445148;
+  --muted: #68736b;
 
-  <meta
-    property="og:site_name"
-    content="Living Waters Aquascapes"
-  />
+  --white: #fafbf7;
 
-  <meta
-    property="og:title"
-    content="Living Waters Aquascapes | North Georgia"
-  />
+  --line: rgba(37, 49, 41, .15);
+  --line-soft: rgba(37, 49, 41, .09);
+  --line-light: rgba(255, 255, 255, .18);
 
-  <meta
-    property="og:description"
-    content="Handcrafted ponds, waterfalls, stonework, and water features designed to belong in the landscape."
-  />
+  --glass-light: rgba(247, 247, 239, .72);
+  --glass-dark: rgba(15, 24, 19, .72);
 
-  <meta
-    property="og:url"
-    content="https://theblackstaginn.github.io/Living-Waters-Aquascapes/"
-  />
+  --shadow:
+    0 20px 55px rgba(33, 45, 37, .12);
 
-  <meta
-    property="og:image"
-    content="https://theblackstaginn.github.io/Living-Waters-Aquascapes/assets/LW-cover.png"
-  />
+  --shadow-heavy:
+    0 28px 80px rgba(7, 15, 10, .30);
 
-  <meta
-    property="og:image:alt"
-    content="Living Waters Aquascapes"
-  />
+  --radius: 24px;
+  --radius-small: 15px;
 
-  <meta
-    name="twitter:card"
-    content="summary_large_image"
-  />
+  --max: 1180px;
+  --header-height: 82px;
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://theblackstaginn.github.io/Living-Waters-Aquascapes/#business",
-    "name": "Living Waters Aquascapes",
-    "url": "https://theblackstaginn.github.io/Living-Waters-Aquascapes/",
-    "image": "https://theblackstaginn.github.io/Living-Waters-Aquascapes/assets/LW-cover.png",
-    "logo": "https://theblackstaginn.github.io/Living-Waters-Aquascapes/assets/LW-icon.png",
-    "telephone": "+1-762-239-8229",
-    "founder": {
-      "@type": "Person",
-      "name": "Tyler Gibson"
-    },
-    "areaServed": [
-      {
-        "@type": "AdministrativeArea",
-        "name": "North Georgia"
-      },
-      {
-        "@type": "Place",
-        "name": "Blue Ridge, Georgia"
-      }
-    ],
-    "description": "Living Waters Aquascapes creates handcrafted ponds, waterfalls, stone features, hot tub integrations, and commercial water features in North Georgia and the Blue Ridge area."
+  --ease:
+    cubic-bezier(.2, .75, .25, 1);
+}
+
+
+/* ========================================
+   RESET
+   ======================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top:
+    calc(var(--header-height) + 24px);
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  overflow-x: hidden;
+
+  color: var(--ink);
+
+  background:
+    var(--cream);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body.nav-open,
+body.lightbox-open {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin-top: 0;
+}
+
+::selection {
+  color: var(--forest-deep);
+  background: var(--water-light);
+}
+
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 99999;
+
+  padding: 10px 14px;
+
+  color: var(--white);
+  background: var(--forest-deep);
+
+  border-radius: 8px;
+
+  transform: translateY(-160%);
+
+  transition:
+    transform .2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:focus-visible {
+  outline:
+    3px solid var(--water-deep);
+  outline-offset: 4px;
+}
+
+
+/* ========================================
+   GLOBAL
+   ======================================== */
+
+.container {
+  width:
+    min(
+      calc(100% - 48px),
+      var(--max)
+    );
+
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+
+  padding:
+    118px 0;
+}
+
+.eyebrow {
+  margin:
+    0 0 16px;
+
+  color: var(--water-deep);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .69rem;
+  font-weight: 800;
+
+  line-height: 1.4;
+
+  letter-spacing: .21em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+
+  color: var(--ink);
+
+  font-weight: 400;
+}
+
+h1 em,
+h2 em {
+  color: var(--water-deep);
+
+  font-weight: 400;
+}
+
+.section-heading h2,
+.work-heading h2,
+.intro-heading h2,
+.philosophy-content h2,
+.service-area-copy h2,
+.cta-content h2,
+.contact-intro h2 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      2.7rem,
+      5vw,
+      5.2rem
+    );
+
+  line-height: .98;
+
+  letter-spacing: -.045em;
+}
+
+.section-lede {
+  max-width: 600px;
+
+  margin:
+    22px 0 0;
+
+  color: var(--muted);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .94rem;
+
+  line-height: 1.78;
+}
+
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.site-header {
+  position: fixed;
+  inset:
+    0 0 auto 0;
+
+  z-index: 1000;
+
+  height:
+    var(--header-height);
+
+  background:
+    rgba(246, 246, 239, .90);
+
+  border-bottom:
+    1px solid rgba(37, 49, 41, .10);
+
+  box-shadow:
+    0 8px 30px rgba(35, 49, 40, .06);
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+
+  transition:
+    background .25s ease,
+    box-shadow .25s ease;
+}
+
+.site-header.scrolled {
+  background:
+    rgba(246, 246, 239, .97);
+
+  box-shadow:
+    0 12px 36px rgba(35, 49, 40, .10);
+}
+
+.header-inner {
+  width:
+    min(
+      calc(100% - 48px),
+      var(--max)
+    );
+
+  height: 100%;
+
+  margin-inline: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 28px;
+}
+
+
+/* ========================================
+   BRAND
+   ======================================== */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+.brand-mark {
+  width: 50px;
+  height: 50px;
+
+  flex: 0 0 auto;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 1px rgba(37, 49, 41, .10),
+    0 7px 20px rgba(32, 47, 37, .12);
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1;
+}
+
+.brand-name {
+  color: var(--forest-deep);
+
+  font-size: 1rem;
+}
+
+.brand-sub {
+  margin-top: 5px;
+
+  color: var(--moss-deep);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .6rem;
+  font-weight: 800;
+
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+
+/* ========================================
+   NAV
+   ======================================== */
+
+.site-nav {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+}
+
+.site-nav > a {
+  position: relative;
+
+  padding:
+    11px 12px;
+
+  color: var(--ink-soft);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .75rem;
+  font-weight: 700;
+
+  letter-spacing: .055em;
+
+  transition:
+    color .2s ease;
+}
+
+.site-nav > a:not(.nav-cta)::after {
+  content: "";
+
+  position: absolute;
+
+  left: 12px;
+  right: 12px;
+  bottom: 5px;
+
+  height: 1px;
+
+  background:
+    var(--water-deep);
+
+  transform: scaleX(0);
+  transform-origin: right;
+
+  transition:
+    transform .25s var(--ease);
+}
+
+.site-nav > a:hover {
+  color: var(--forest-deep);
+}
+
+.site-nav > a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.site-nav .nav-cta {
+  margin-left: 8px;
+
+  padding:
+    11px 18px;
+
+  color: var(--white);
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--water-deep),
+      #5c8885
+    );
+
+  border:
+    1px solid rgba(31, 73, 71, .18);
+
+  border-radius: 999px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .18),
+    0 8px 22px rgba(49, 90, 85, .15);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.site-nav .nav-cta:hover {
+  color: #fff;
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .22),
+    0 11px 28px rgba(49, 90, 85, .20);
+}
+
+.nav-toggle {
+  display: none;
+
+  width: 45px;
+  height: 45px;
+
+  padding: 0;
+
+  border:
+    1px solid var(--line);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, .45);
+
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+
+  width: 18px;
+  height: 1px;
+
+  margin: 5px auto;
+
+  background:
+    var(--forest-deep);
+
+  transition:
+    transform .25s ease,
+    opacity .25s ease;
+}
+
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+
+  padding:
+    13px 22px;
+
+  border:
+    1px solid transparent;
+
+  border-radius: 999px;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .77rem;
+  font-weight: 800;
+
+  letter-spacing: .055em;
+
+  cursor: pointer;
+
+  transition:
+    transform .22s var(--ease),
+    box-shadow .22s var(--ease),
+    background .22s ease,
+    border-color .22s ease;
+}
+
+.button:hover {
+  transform:
+    translateY(-2px);
+}
+
+.button-primary {
+  color: #fff;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--water-deep),
+      #62918d
+    );
+
+  border-color:
+    rgba(45, 91, 88, .22);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .20),
+    0 13px 32px rgba(50, 92, 88, .19);
+}
+
+.button-primary:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .25),
+    0 17px 38px rgba(50, 92, 88, .25);
+}
+
+.button-secondary {
+  color: var(--forest-deep);
+
+  background:
+    rgba(250, 251, 247, .54);
+
+  border-color:
+    rgba(37, 49, 41, .22);
+
+  backdrop-filter:
+    blur(10px);
+
+  -webkit-backdrop-filter:
+    blur(10px);
+}
+
+.button-secondary:hover {
+  background:
+    rgba(255, 255, 255, .78);
+
+  border-color:
+    rgba(37, 49, 41, .30);
+}
+
+.button-secondary-light {
+  color: #fff;
+
+  background:
+    rgba(255, 255, 255, .09);
+
+  border-color:
+    rgba(255, 255, 255, .32);
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+}
+
+.button-secondary-light:hover {
+  background:
+    rgba(255, 255, 255, .16);
+}
+
+
+/* ========================================
+   HERO
+   ======================================== */
+
+.hero {
+  position: relative;
+
+  min-height:
+    max(720px, 94svh);
+
+  display: flex;
+  align-items: flex-end;
+
+  padding:
+    calc(var(--header-height) + 90px)
+    0
+    100px;
+
+  overflow: hidden;
+
+  background:
+    var(--sage-soft);
+}
+
+.hero-backdrop,
+.hero-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-backdrop-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  filter:
+    saturate(.93)
+    contrast(.96)
+    brightness(1.04);
+
+  transform:
+    scale(1.015);
+}
+
+.hero-shade {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(241, 241, 230, .94)
+      0%,
+      rgba(239, 241, 228, .84)
+      31%,
+      rgba(232, 238, 224, .49)
+      56%,
+      rgba(31, 46, 36, .08)
+      100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(238, 240, 229, .15)
+      0%,
+      transparent 38%,
+      rgba(226, 230, 216, .30)
+      100%
+    );
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+}
+
+.hero-copy {
+  max-width: 760px;
+}
+
+.hero .eyebrow {
+  color: var(--moss-deep);
+}
+
+.hero-copy h1 {
+  max-width: 800px;
+
+  margin: 0;
+
+  color: var(--forest-deep);
+
+  font-size:
+    clamp(
+      3.8rem,
+      8vw,
+      7.7rem
+    );
+
+  line-height: .89;
+
+  letter-spacing: -.058em;
+
+  text-shadow:
+    0 2px 24px rgba(255, 255, 255, .28);
+}
+
+.hero-copy h1 em {
+  display: block;
+
+  color: var(--water-deep);
+}
+
+.hero-lede {
+  max-width: 580px;
+
+  margin:
+    29px 0 0;
+
+  color: #46564b;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size:
+    clamp(
+      1rem,
+      1.6vw,
+      1.15rem
+    );
+
+  line-height: 1.72;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 31px;
+}
+
+.hero-byline {
+  margin:
+    34px 0 0;
+
+  color: var(--muted);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .76rem;
+
+  letter-spacing: .03em;
+}
+
+.hero-byline strong {
+  color: var(--forest-deep);
+
+  font-weight: 750;
+}
+
+
+/* ========================================
+   INTRO
+   ======================================== */
+
+.intro-section {
+  position: relative;
+
+  padding:
+    132px 0;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f3f1e9,
+      #e6eadf
+    );
+
+  border-bottom:
+    1px solid var(--line-soft);
+}
+
+.intro-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  right: -280px;
+  top: -270px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(113, 157, 155, .13),
+      transparent 68%
+    );
+}
+
+.intro-grid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(300px, .75fr);
+
+  gap: 85px;
+
+  align-items: start;
+}
+
+.intro-heading h2 {
+  font-size:
+    clamp(
+      3.1rem,
+      6vw,
+      6rem
+    );
+}
+
+.intro-copy {
+  padding-top: 32px;
+
+  color: var(--muted);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .95rem;
+
+  line-height: 1.82;
+}
+
+.intro-copy p {
+  margin-bottom: 20px;
+}
+
+.intro-copy .intro-lead {
+  color: var(--forest-soft);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      1.35rem,
+      2.2vw,
+      1.75rem
+    );
+
+  line-height: 1.42;
+}
+
+
+/* ========================================
+   SERVICES
+   ======================================== */
+
+.services-section {
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #e3e8dd,
+      #d9e1d4
+    );
+}
+
+.services-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 12% 20%,
+      rgba(255, 255, 255, .45),
+      transparent 30rem
+    ),
+    radial-gradient(
+      circle at 88% 80%,
+      rgba(113, 157, 155, .12),
+      transparent 28rem
+    );
+}
+
+.section-heading {
+  position: relative;
+  z-index: 2;
+
+  max-width: 900px;
+
+  margin-bottom: 58px;
+}
+
+.service-grid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 15px;
+}
+
+.service-card {
+  position: relative;
+
+  min-height: 330px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding:
+    32px 27px;
+
+  overflow: hidden;
+
+  background:
+    rgba(248, 248, 241, .62);
+
+  border:
+    1px solid rgba(52, 72, 59, .12);
+
+  border-radius:
+    var(--radius);
+
+  box-shadow:
+    0 12px 38px rgba(52, 70, 58, .07);
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+
+  transition:
+    transform .3s var(--ease),
+    background .3s ease,
+    box-shadow .3s ease;
+}
+
+.service-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset:
+    0 0 auto 0;
+
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--moss-light),
+      var(--water)
+    );
+
+  opacity: .75;
+}
+
+.service-card:hover {
+  transform:
+    translateY(-5px);
+
+  background:
+    rgba(252, 252, 247, .82);
+
+  box-shadow:
+    0 20px 46px rgba(52, 70, 58, .12);
+}
+
+.service-card h3 {
+  margin:
+    5px 0 18px;
+
+  color: var(--forest-deep);
+
+  font-size:
+    clamp(
+      1.35rem,
+      2vw,
+      1.65rem
+    );
+
+  line-height: 1.18;
+}
+
+.service-card p {
+  margin:
+    0 0 28px;
+
+  color: var(--muted);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .85rem;
+
+  line-height: 1.74;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+
+  margin-top: auto;
+
+  color: var(--water-deep);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .73rem;
+  font-weight: 800;
+
+  letter-spacing: .045em;
+}
+
+.text-link::after {
+  content: "";
+
+  width: 24px;
+  height: 1px;
+
+  margin-left: 9px;
+
+  background:
+    currentColor;
+
+  transition:
+    width .2s ease;
+}
+
+.text-link:hover::after {
+  width: 35px;
+}
+
+
+/* ========================================
+   SUNLIGHT / WATER TEXTURE BREAK
+   ======================================== */
+
+.water-break {
+  position: relative;
+
+  height:
+    clamp(
+      300px,
+      42vw,
+      540px
+    );
+
+  overflow: hidden;
+
+  background:
+    #d9dfd1;
+}
+
+.water-break-image,
+.water-break-wash {
+  position: absolute;
+  inset: 0;
+}
+
+.water-break-image {
+  background-image:
+    url("assets/LW-water-texture.png");
+
+  background-size: cover;
+  background-position: center;
+
+  filter:
+    saturate(.88)
+    contrast(.92)
+    brightness(1.08);
+
+  transform:
+    scale(1.02);
+}
+
+.water-break-wash {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(226, 232, 217, .16),
+      rgba(20, 40, 29, .05)
+    );
+}
+
+.water-break::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  box-shadow:
+    inset 0 30px 50px rgba(45, 64, 49, .08),
+    inset 0 -30px 50px rgba(45, 64, 49, .10);
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   WORK
+   ======================================== */
+
+.work-section {
+  background:
+    linear-gradient(
+      180deg,
+      #f0eee5,
+      #e8e7dd
+    );
+}
+
+.work-heading {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(270px, 380px);
+
+  gap: 70px;
+
+  align-items: end;
+
+  margin-bottom: 58px;
+}
+
+.work-heading-copy {
+  margin:
+    0 0 5px;
+
+  color: var(--muted);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .88rem;
+
+  line-height: 1.78;
+}
+
+.project-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(12, minmax(0, 1fr));
+
+  grid-auto-rows:
+    minmax(270px, 31vw);
+
+  gap: 17px;
+}
+
+.project-card {
+  position: relative;
+
+  grid-column:
+    span 5;
+
+  min-width: 0;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(37, 49, 41, .13);
+
+  border-radius:
+    var(--radius);
+
+  background:
+    var(--sage);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-shadow:
+    var(--shadow);
+}
+
+.project-card-large {
+  grid-column:
+    span 7;
+}
+
+.project-card-wide {
+  grid-column:
+    span 7;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+    saturate(.92)
+    contrast(.98)
+    brightness(1.01);
+
+  transition:
+    transform .7s var(--ease),
+    filter .5s ease;
+}
+
+.project-card:hover img {
+  transform:
+    scale(1.04);
+
+  filter:
+    saturate(1)
+    contrast(1)
+    brightness(1.04);
+}
+
+.project-shade {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 35%,
+      rgba(11, 25, 17, .78)
+      100%
+    );
+}
+
+.project-copy {
+  position: absolute;
+
+  inset:
+    auto 0 0 0;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr auto;
+
+  gap: 6px 18px;
+
+  align-items: end;
+
+  padding:
+    27px;
+}
+
+.project-type {
+  grid-column:
+    1 / -1;
+
+  color: var(--water-pale);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .61rem;
+  font-weight: 800;
+
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+
+.project-title {
+  color: #fff;
+
+  font-size:
+    clamp(
+      1.4rem,
+      2.4vw,
+      2.2rem
+    );
+
+  line-height: 1.08;
+}
+
+.project-action {
+  padding-bottom: 4px;
+
+  color:
+    rgba(255, 255, 255, .74);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .67rem;
+  font-weight: 700;
+}
+
+
+/* ========================================
+   PHILOSOPHY
+   ======================================== */
+
+.philosophy-section {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(420px, .95fr);
+
+  min-height: 720px;
+
+  background:
+    #dce3d6;
+}
+
+.philosophy-image {
+  position: relative;
+
+  min-height: 680px;
+
+  overflow: hidden;
+}
+
+.philosophy-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+    saturate(.90)
+    contrast(.97)
+    brightness(1.02);
+}
+
+.philosophy-image-shade {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 68%,
+      rgba(220, 227, 214, .94)
+      100%
+    );
+}
+
+.philosophy-content {
+  align-self: center;
+
+  max-width: 650px;
+
+  padding:
+    95px 70px;
+}
+
+.philosophy-content h2 {
+  margin-bottom: 32px;
+
+  font-size:
+    clamp(
+      3rem,
+      5vw,
+      5.3rem
+    );
+}
+
+.philosophy-lead {
+  margin-bottom: 18px;
+
+  color: var(--forest-soft);
+
+  font-size: 1.4rem;
+
+  line-height: 1.42;
+}
+
+.philosophy-content > p:not(.eyebrow):not(.philosophy-lead) {
+  color: var(--muted);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .9rem;
+
+  line-height: 1.8;
+}
+
+.philosophy-points {
+  display: grid;
+
+  margin-top: 38px;
+
+  border-top:
+    1px solid var(--line);
+}
+
+.philosophy-points > div {
+  padding:
+    20px 0;
+
+  border-bottom:
+    1px solid var(--line);
+}
+
+.philosophy-points h3 {
+  margin:
+    0 0 5px;
+
+  color: var(--forest-deep);
+
+  font-size: 1.05rem;
+}
+
+.philosophy-points p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .81rem;
+
+  line-height: 1.62;
+}
+
+
+/* ========================================
+   PROCESS
+   ======================================== */
+
+.process-section {
+  overflow: hidden;
+
+  background:
+    #f3f1e9;
+}
+
+.process-heading {
+  max-width: 850px;
+
+  margin-bottom: 60px;
+}
+
+.process-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.process-step {
+  min-height: 255px;
+
+  padding:
+    31px;
+
+  background:
+    rgba(255, 255, 255, .46);
+
+  border:
+    1px solid var(--line);
+
+  border-radius:
+    var(--radius);
+
+  box-shadow:
+    0 10px 34px rgba(37, 49, 41, .05);
+
+  transition:
+    transform .25s var(--ease),
+    background .25s ease,
+    box-shadow .25s ease;
+}
+
+.process-step:hover {
+  transform:
+    translateY(-4px);
+
+  background:
+    rgba(255, 255, 255, .70);
+
+  box-shadow:
+    0 18px 42px rgba(37, 49, 41, .09);
+}
+
+.process-step h3 {
+  margin:
+    0 0 17px;
+
+  color: var(--forest-deep);
+
+  font-size:
+    clamp(
+      1.35rem,
+      2.3vw,
+      1.8rem
+    );
+
+  line-height: 1.18;
+}
+
+.process-step p {
+  max-width: 560px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .87rem;
+
+  line-height: 1.76;
+}
+
+
+/* ========================================
+   SERVICE AREA
+   ======================================== */
+
+.service-area-section {
+  position: relative;
+
+  padding:
+    125px 0;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c8d3c2,
+      #dce1d4 52%,
+      #c9d8d3
+    );
+
+  border-top:
+    1px solid var(--line-soft);
+
+  border-bottom:
+    1px solid var(--line-soft);
+}
+
+.service-area-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  right: -250px;
+  bottom: -400px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(113, 157, 155, .18),
+      transparent 67%
+    );
+}
+
+.service-area-grid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, .95fr)
+    minmax(330px, .75fr);
+
+  gap: 95px;
+
+  align-items: center;
+}
+
+.service-area-copy h2 {
+  margin-bottom: 28px;
+
+  font-size:
+    clamp(
+      3rem,
+      5vw,
+      5.2rem
+    );
+}
+
+.service-area-copy p {
+  max-width: 590px;
+
+  color: #58665c;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .9rem;
+
+  line-height: 1.8;
+}
+
+.service-area-copy .button {
+  margin-top: 15px;
+}
+
+.service-area-visual {
+  min-height: 410px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 45px;
+
+  background:
+    rgba(249, 249, 242, .40);
+
+  border:
+    1px solid rgba(37, 49, 41, .12);
+
+  border-radius:
+    48% 52% 44% 56% /
+    53% 44% 56% 47%;
+
+  box-shadow:
+    inset 0 0 70px rgba(255, 255, 255, .16),
+    0 24px 60px rgba(50, 70, 56, .10);
+
+  backdrop-filter:
+    blur(8px);
+
+  -webkit-backdrop-filter:
+    blur(8px);
+}
+
+.service-area-visual img {
+  width:
+    min(190px, 55%);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 18px 42px rgba(38, 55, 43, .18);
+}
+
+.service-area-visual p {
+  margin:
+    24px 0 0;
+
+  color: var(--ink-soft);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .75rem;
+
+  letter-spacing: .05em;
+
+  text-align: center;
+}
+
+.service-area-visual strong {
+  color: var(--forest-deep);
+}
+
+
+/* ========================================
+   CTA — OUR DRAMATIC DARK MOMENT
+   ======================================== */
+
+.cta-section {
+  position: relative;
+
+  min-height: 680px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    var(--forest-deep);
+}
+
+.cta-background,
+.cta-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.cta-background img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+    saturate(.88)
+    contrast(1)
+    brightness(.82);
+}
+
+.cta-shade {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(14, 25, 18, .89)
+      0%,
+      rgba(14, 25, 18, .70)
+      47%,
+      rgba(14, 25, 18, .22)
+      100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(14, 25, 18, .08),
+      rgba(14, 25, 18, .34)
+    );
+}
+
+.cta-content {
+  position: relative;
+  z-index: 3;
+}
+
+.cta-content .eyebrow {
+  color: var(--water-light);
+}
+
+.cta-content h2 {
+  max-width: 720px;
+
+  color: #fff;
+
+  font-size:
+    clamp(
+      3.7rem,
+      7vw,
+      7rem
+    );
+
+  text-shadow:
+    0 5px 30px rgba(0, 0, 0, .24);
+}
+
+.cta-content h2 em {
+  color: var(--water-light);
+}
+
+.cta-content p:not(.eyebrow) {
+  max-width: 570px;
+
+  margin:
+    28px 0 0;
+
+  color:
+    rgba(244, 245, 239, .79);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .96rem;
+
+  line-height: 1.76;
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 31px;
+}
+
+
+/* ========================================
+   CONTACT
+   ======================================== */
+
+.contact-section {
+  background:
+    linear-gradient(
+      180deg,
+      #f0eee5,
+      #e3e6da
+    );
+}
+
+.contact-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, .9fr)
+    minmax(380px, 1fr);
+
+  gap: 90px;
+
+  align-items: start;
+}
+
+.contact-intro h2 {
+  margin-bottom: 28px;
+
+  font-size:
+    clamp(
+      3rem,
+      5.5vw,
+      5.5rem
+    );
+}
+
+.contact-intro > p:not(.eyebrow) {
+  max-width: 520px;
+
+  color: var(--muted);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .91rem;
+
+  line-height: 1.8;
+}
+
+.contact-panel {
+  overflow: hidden;
+
+  background:
+    rgba(255, 255, 255, .43);
+
+  border:
+    1px solid var(--line);
+
+  border-radius:
+    var(--radius);
+
+  box-shadow:
+    var(--shadow);
+}
+
+.contact-method {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding:
+    27px 29px;
+
+  border-bottom:
+    1px solid var(--line);
+
+  transition:
+    padding-left .25s var(--ease),
+    background .25s ease;
+}
+
+.contact-method:hover {
+  padding-left: 36px;
+
+  background:
+    rgba(255, 255, 255, .42);
+}
+
+.contact-label {
+  color: var(--water-deep);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .62rem;
+  font-weight: 800;
+
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.contact-method strong {
+  color: var(--forest-deep);
+
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.contact-help {
+  padding:
+    27px 29px 30px;
+}
+
+.contact-help p {
+  margin:
+    0 0 14px;
+
+  color: var(--forest-soft);
+
+  font-size: .95rem;
+}
+
+.contact-help ul {
+  display: grid;
+
+  gap: 8px;
+
+  margin: 0;
+  padding-left: 20px;
+
+  color: var(--muted);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .82rem;
+}
+
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.site-footer {
+  position: relative;
+
+  padding:
+    72px 0 24px;
+
+  color: #fff;
+
+  background:
+    var(--forest-deep);
+
+  border-top:
+    1px solid rgba(255, 255, 255, .08);
+}
+
+.site-footer .brand-name {
+  color: #fff;
+}
+
+.site-footer .brand-sub {
+  color: var(--water-light);
+}
+
+.footer-main {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(150px, .5fr)
+    minmax(210px, .65fr);
+
+  gap: 70px;
+
+  padding-bottom: 58px;
+}
+
+.brand-footer {
+  margin-bottom: 21px;
+}
+
+.footer-brand > p {
+  max-width: 420px;
+
+  margin: 0;
+
+  color:
+    rgba(235, 239, 232, .62);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .8rem;
+
+  line-height: 1.72;
+}
+
+.footer-nav,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.footer-label {
+  margin:
+    0 0 8px;
+
+  color: var(--water-light);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .62rem;
+  font-weight: 800;
+
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.footer-nav a,
+.footer-contact a,
+.footer-contact span {
+  color:
+    rgba(235, 239, 232, .63);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .8rem;
+
+  transition:
+    color .2s ease;
+}
+
+.footer-nav a:hover,
+.footer-contact a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  padding-top: 22px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, .10);
+}
+
+.footer-bottom p {
+  margin: 0;
+
+  color:
+    rgba(235, 239, 232, .48);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .68rem;
+}
+
+.site-credit a {
+  color: var(--water-light);
+
+  transition:
+    color .2s ease;
+}
+
+.site-credit a:hover {
+  color: #fff;
+}
+
+
+/* ========================================
+   LIGHTBOX
+   ======================================== */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+
+  z-index: 5000;
+
+  display: grid;
+  place-items: center;
+
+  padding: 28px;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition:
+    opacity .25s ease,
+    visibility .25s ease;
+}
+
+.lightbox.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+
+  background:
+    rgba(10, 18, 13, .88);
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+}
+
+.lightbox-panel {
+  position: relative;
+  z-index: 2;
+
+  width:
+    min(1100px, 100%);
+
+  max-height:
+    calc(100svh - 56px);
+
+  padding: 12px;
+
+  overflow: auto;
+
+  background:
+    #eef0e7;
+
+  border:
+    1px solid rgba(255, 255, 255, .18);
+
+  border-radius:
+    var(--radius);
+
+  box-shadow:
+    var(--shadow-heavy);
+
+  transform:
+    translateY(14px)
+    scale(.985);
+
+  transition:
+    transform .3s var(--ease);
+}
+
+.lightbox.active
+.lightbox-panel {
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+.lightbox-image {
+  width: 100%;
+
+  max-height:
+    calc(100svh - 145px);
+
+  object-fit: contain;
+
+  border-radius:
+    calc(var(--radius) - 8px);
+}
+
+.lightbox-close {
+  position: absolute;
+
+  top: 22px;
+  right: 22px;
+
+  z-index: 5;
+
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  color: #fff;
+
+  background:
+    rgba(16, 28, 20, .78);
+
+  border:
+    1px solid rgba(255, 255, 255, .24);
+
+  border-radius: 50%;
+
+  backdrop-filter:
+    blur(10px);
+
+  cursor: pointer;
+
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.lightbox-caption {
+  margin:
+    10px 5px 2px;
+
+  color: var(--muted);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: .76rem;
+}
+
+
+/* ========================================
+   TABLET
+   ======================================== */
+
+@media (max-width: 1000px) {
+
+  :root {
+    --header-height: 76px;
   }
-  </script>
 
-  <link
-    rel="stylesheet"
-    href="styles.css?v=20260924-2"
-  />
-</head>
+  .section {
+    padding:
+      95px 0;
+  }
 
+  .header-inner {
+    width:
+      min(
+        calc(100% - 36px),
+        var(--max)
+      );
+  }
 
-<body>
+  .nav-toggle {
+    display: block;
+  }
 
-  <a
-    class="skip-link"
-    href="#main"
-  >
-    Skip to content
-  </a>
+  .site-nav {
+    position: fixed;
 
+    top:
+      var(--header-height);
 
-  <!-- ========================================
-       HEADER
-       ======================================== -->
+    left: 0;
+    right: 0;
 
-  <header
-    class="site-header"
-    id="top"
-  >
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 
-    <div class="header-inner">
+    gap: 0;
 
-      <a
-        class="brand"
-        href="#top"
-        aria-label="Living Waters Aquascapes home"
-      >
+    padding: 18px;
 
-        <img
-          class="brand-mark"
-          src="assets/LW-icon.png"
-          alt=""
-          width="64"
-          height="64"
-        />
+    background:
+      rgba(244, 245, 237, .98);
 
-        <span class="brand-copy">
+    border-bottom:
+      1px solid var(--line);
 
-          <span class="brand-name">
-            Living Waters
-          </span>
+    box-shadow:
+      0 22px 55px rgba(35, 49, 40, .15);
 
-          <span class="brand-sub">
-            Aquascapes
-          </span>
+    backdrop-filter:
+      blur(18px);
 
-        </span>
+    -webkit-backdrop-filter:
+      blur(18px);
 
-      </a>
+    transform:
+      translateY(-130%);
 
+    visibility: hidden;
 
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="site-nav"
-        aria-label="Open navigation"
-      >
+    transition:
+      transform .3s var(--ease),
+      visibility .3s ease;
+  }
 
-        <span></span>
-        <span></span>
-        <span></span>
+  .site-nav.open {
+    transform:
+      translateY(0);
 
-      </button>
+    visibility: visible;
+  }
 
+  .site-nav > a {
+    padding:
+      15px 12px;
 
-      <nav
-        class="site-nav"
-        id="site-nav"
-        aria-label="Primary navigation"
-      >
+    border-bottom:
+      1px solid var(--line-soft);
 
-        <a href="#services">
-          Services
-        </a>
+    font-size: .8rem;
+  }
 
-        <a href="#work">
-          Our Work
-        </a>
+  .site-nav > a::after {
+    display: none;
+  }
 
-        <a href="#process">
-          Process
-        </a>
+  .site-nav .nav-cta {
+    margin:
+      14px 0 0;
+
+    border-bottom: 0;
+
+    text-align: center;
+  }
+
+  .nav-toggle[aria-expanded="true"]
+  span:nth-child(1) {
+    transform:
+      translateY(6px)
+      rotate(45deg);
+  }
 
-        <a href="#service-area">
-          Service Area
-        </a>
-
-        <a
-          class="nav-cta"
-          href="#contact"
-        >
-          Start a Project
-        </a>
-
-      </nav>
-
-    </div>
-
-  </header>
-
-
-  <main id="main">
-
-
-    <!-- ========================================
-         HERO
-         ======================================== -->
-
-    <section
-      class="hero"
-      aria-labelledby="hero-title"
-    >
-
-      <div class="hero-backdrop">
-
-        <img
-          src="assets/LW-cover.png"
-          alt=""
-          class="hero-backdrop-image"
-          loading="eager"
-          fetchpriority="high"
-        />
-
-      </div>
-
-      <div class="hero-shade"></div>
-
-
-      <div class="container hero-inner">
-
-        <div class="hero-copy">
-
-          <p class="eyebrow">
-            North Georgia • Blue Ridge
-          </p>
-
-          <h1 id="hero-title">
-            Bring the sound of
-            <em>living water</em>
-            home.
-          </h1>
-
-          <p class="hero-lede">
-            Handcrafted ponds, waterfalls, stonework,
-            and water features designed to feel as
-            though they have always belonged there.
-          </p>
-
-
-          <div class="hero-actions">
-
-            <a
-              class="button button-primary"
-              href="#contact"
-            >
-              Start Your Project
-            </a>
-
-            <a
-              class="button button-secondary"
-              href="#work"
-            >
-              See the Possibilities
-            </a>
-
-          </div>
-
-
-          <p class="hero-byline">
-            Designed and built by
-            <strong>Tyler Gibson</strong>
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ========================================
-         INTRO
-         ======================================== -->
-
-    <section
-      class="intro-section"
-      id="intro"
-    >
-
-      <div class="container intro-grid">
-
-        <div class="intro-heading">
-
-          <p class="eyebrow">
-            Built Into the Landscape
-          </p>
-
-          <h2>
-            Stone. Water.
-            <em>Movement.</em>
-          </h2>
-
-        </div>
-
-
-        <div class="intro-copy">
-
-          <p class="intro-lead">
-            A great water feature should not look
-            installed. It should look discovered.
-          </p>
-
-          <p>
-            Living Waters Aquascapes combines
-            natural stone, thoughtful water flow,
-            and the character of the surrounding
-            landscape to create spaces that feel
-            established rather than added on.
-          </p>
-
-          <p>
-            From a quiet garden pond to a cascading
-            waterfall beside a hot tub, every project
-            begins with the place itself.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ========================================
-         SERVICES
-         ======================================== -->
-
-    <section
-      class="section services-section"
-      id="services"
-      aria-labelledby="services-title"
-    >
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <p class="eyebrow">
-            What We Build
-          </p>
-
-          <h2 id="services-title">
-            Water shaped
-            <em>for the space.</em>
-          </h2>
-
-          <p class="section-lede">
-            Every feature begins with the property,
-            the stone, and the way water should move
-            through the finished space.
-          </p>
-
-        </div>
-
-
-        <div class="service-grid">
-
-          <article class="service-card">
-
-            <h3>
-              Garden Ponds
-            </h3>
-
-            <p>
-              Koi ponds, lily ponds, and naturalized
-              water gardens shaped with stone,
-              planting areas, and thoughtful flow.
-            </p>
-
-            <a
-              href="#contact"
-              class="text-link"
-            >
-              Plan a pond
-            </a>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <h3>
-              Waterfalls &amp; Stonework
-            </h3>
-
-            <p>
-              Hand-stacked stone and integrated
-              spillways designed around natural
-              movement, sound, and the character
-              of the site.
-            </p>
-
-            <a
-              href="#contact"
-              class="text-link"
-            >
-              Build a waterfall
-            </a>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <h3>
-              Hot Tub Features
-            </h3>
-
-            <p>
-              Stone surrounds and water features
-              designed to help an existing hot tub
-              settle naturally into its environment.
-            </p>
-
-            <a
-              href="#contact"
-              class="text-link"
-            >
-              Transform the space
-            </a>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <h3>
-              Commercial Features
-            </h3>
-
-            <p>
-              Water and stone features for
-              courtyards, entrances, lodges,
-              rentals, and other commercial
-              environments.
-            </p>
-
-            <a
-              href="#contact"
-              class="text-link"
-            >
-              Discuss a project
-            </a>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ========================================
-         ATMOSPHERE BREAK
-         ======================================== -->
-
-    <section
-      class="water-break"
-      aria-hidden="true"
-    >
-
-      <div class="water-break-image"></div>
-      <div class="water-break-wash"></div>
-
-    </section>
-
-
-    <!-- ========================================
-         WORK
-         ======================================== -->
-
-    <section
-      class="section work-section"
-      id="work"
-      aria-labelledby="work-title"
-    >
-
-      <div class="container">
-
-        <div class="work-heading">
-
-          <div>
-
-            <p class="eyebrow">
-              The Possibilities
-            </p>
-
-            <h2 id="work-title">
-              Designed around
-              <em>the land.</em>
-            </h2>
-
-          </div>
-
-
-          <p class="work-heading-copy">
-            These concept studies show the kinds of
-            environments Living Waters can create.
-            As completed-project photography grows,
-            those projects can take their place here.
-          </p>
-
-        </div>
-
-
-        <div
-          class="project-grid"
-          aria-label="Living Waters concept gallery"
-        >
-
-
-          <button
-            class="project-card project-card-large"
-            type="button"
-            data-lightbox
-            data-full="assets/mockup-hot-tub-integration.png"
-            data-alt="Hot tub integration concept"
-          >
-
-            <img
-              src="assets/mockup-hot-tub-integration.png"
-              alt="Concept design of a hot tub integrated with stone and water"
-              loading="lazy"
-            />
-
-            <span class="project-shade"></span>
-
-            <span class="project-copy">
-
-              <span class="project-type">
-                Concept Study
-              </span>
-
-              <span class="project-title">
-                Hot Tub Integration
-              </span>
-
-              <span class="project-action">
-                View concept
-              </span>
-
-            </span>
-
-          </button>
-
-
-          <button
-            class="project-card"
-            type="button"
-            data-lightbox
-            data-full="assets/mockup-garden-pond.png"
-            data-alt="Garden pond concept"
-          >
-
-            <img
-              src="assets/mockup-garden-pond.png"
-              alt="Concept design of a natural garden pond"
-              loading="lazy"
-            />
-
-            <span class="project-shade"></span>
-
-            <span class="project-copy">
-
-              <span class="project-type">
-                Concept Study
-              </span>
-
-              <span class="project-title">
-                Garden Pond
-              </span>
-
-              <span class="project-action">
-                View concept
-              </span>
-
-            </span>
-
-          </button>
-
-
-          <button
-            class="project-card"
-            type="button"
-            data-lightbox
-            data-full="assets/mockup-commercial-water-feature.png"
-            data-alt="Commercial water feature concept"
-          >
-
-            <img
-              src="assets/mockup-commercial-water-feature.png"
-              alt="Concept design of a commercial water feature"
-              loading="lazy"
-            />
-
-            <span class="project-shade"></span>
-
-            <span class="project-copy">
-
-              <span class="project-type">
-                Concept Study
-              </span>
-
-              <span class="project-title">
-                Commercial Feature
-              </span>
-
-              <span class="project-action">
-                View concept
-              </span>
-
-            </span>
-
-          </button>
-
-
-          <button
-            class="project-card project-card-wide"
-            type="button"
-            data-lightbox
-            data-full="assets/mockup-courtyard-water-feature.png"
-            data-alt="Courtyard water feature concept"
-          >
-
-            <img
-              src="assets/mockup-courtyard-water-feature.png"
-              alt="Concept design of a courtyard water feature"
-              loading="lazy"
-            />
-
-            <span class="project-shade"></span>
-
-            <span class="project-copy">
-
-              <span class="project-type">
-                Concept Study
-              </span>
-
-              <span class="project-title">
-                Courtyard Water Feature
-              </span>
-
-              <span class="project-action">
-                View concept
-              </span>
-
-            </span>
-
-          </button>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ========================================
-         APPROACH
-         ======================================== -->
-
-    <section
-      class="philosophy-section"
-      aria-labelledby="philosophy-title"
-    >
-
-      <div class="philosophy-image">
-
-        <img
-          src="assets/mockup-garden-pond.png"
-          alt=""
-          loading="lazy"
-        />
-
-        <div class="philosophy-image-shade"></div>
-
-      </div>
-
-
-      <div class="philosophy-content">
-
-        <p class="eyebrow">
-          The Living Waters Approach
-        </p>
-
-        <h2 id="philosophy-title">
-          Built to feel
-          <em>found, not placed.</em>
-        </h2>
-
-        <p class="philosophy-lead">
-          Water changes a space before you ever
-          touch it.
-        </p>
-
-        <p>
-          The sound of a fall, the reflection of
-          trees across a pond, and the way stone
-          disappears into the landscape all matter.
-          Living Waters approaches each project as
-          part construction and part composition.
-        </p>
-
-
-        <div class="philosophy-points">
-
-          <div>
-
-            <h3>
-              Natural Character
-            </h3>
-
-            <p>
-              Stone and water arranged to complement
-              the surrounding landscape.
-            </p>
-
-          </div>
-
-
-          <div>
-
-            <h3>
-              Intentional Flow
-            </h3>
-
-            <p>
-              Water movement considered for both
-              appearance and sound.
-            </p>
-
-          </div>
-
-
-          <div>
-
-            <h3>
-              Built for the Space
-            </h3>
-
-            <p>
-              Every project begins with the
-              property rather than a template.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ========================================
-         PROCESS
-         ======================================== -->
-
-    <section
-      class="section process-section"
-      id="process"
-      aria-labelledby="process-title"
-    >
-
-      <div class="container">
-
-        <div class="process-heading">
-
-          <p class="eyebrow">
-            From Idea to Water
-          </p>
-
-          <h2 id="process-title">
-            A straightforward
-            <em>process.</em>
-          </h2>
-
-        </div>
-
-
-        <div class="process-list">
-
-          <article class="process-step">
-
-            <h3>
-              Start with a conversation
-            </h3>
-
-            <p>
-              Tell Tyler about the space, what you
-              have in mind, your general budget,
-              and what you want the finished
-              feature to feel like.
-            </p>
-
-          </article>
-
-
-          <article class="process-step">
-
-            <h3>
-              Walk the site
-            </h3>
-
-            <p>
-              Placement, terrain, water movement,
-              stone character, and practical
-              constraints are considered before
-              the build begins.
-            </p>
-
-          </article>
-
-
-          <article class="process-step">
-
-            <h3>
-              Shape the feature
-            </h3>
-
-            <p>
-              The stonework and water feature are
-              built around the site rather than
-              forcing the site around a generic
-              design.
-            </p>
-
-          </article>
-
-
-          <article class="process-step">
-
-            <h3>
-              Tune the water
-            </h3>
-
-            <p>
-              Flow, splash, and sound are adjusted
-              until the finished feature looks and
-              feels right in the space.
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ========================================
-         SERVICE AREA
-         ======================================== -->
-
-    <section
-      class="service-area-section"
-      id="service-area"
-      aria-labelledby="service-area-title"
-    >
-
-      <div class="container service-area-grid">
-
-        <div class="service-area-copy">
-
-          <p class="eyebrow">
-            North Georgia
-          </p>
-
-          <h2 id="service-area-title">
-            Crafted for
-            <em>mountain country.</em>
-          </h2>
-
-          <p>
-            Living Waters Aquascapes serves
-            homeowners and businesses throughout
-            North Georgia and the Blue Ridge area.
-          </p>
-
-          <p>
-            Have a property outside the immediate
-            area? Reach out with your location and
-            project details to see whether it is a
-            good fit.
-          </p>
-
-          <a
-            class="button button-secondary"
-            href="#contact"
-          >
-            Ask About Your Property
-          </a>
-
-        </div>
-
-
-        <div class="service-area-visual">
-
-          <img
-            src="assets/LW-icon.png"
-            alt="Living Waters Aquascapes"
-            loading="lazy"
-          />
-
-          <p>
-            Handcrafted in
-            <strong>North Georgia</strong>
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ========================================
-         CTA
-         ======================================== -->
-
-    <section
-      class="cta-section"
-      aria-labelledby="cta-title"
-    >
-
-      <div class="cta-background">
-
-        <img
-          src="assets/mockup-courtyard-water-feature.png"
-          alt=""
-          loading="lazy"
-        />
-
-      </div>
-
-      <div class="cta-shade"></div>
-
-
-      <div class="container cta-content">
-
-        <p class="eyebrow">
-          Have a Space in Mind?
-        </p>
-
-        <h2 id="cta-title">
-          Let's make it
-          <em>come alive.</em>
-        </h2>
-
-        <p>
-          Tell Tyler what you are imagining and
-          where the project is located. A few photos
-          of the space are a great place to start.
-        </p>
-
-
-        <div class="cta-actions">
-
-          <a
-            class="button button-primary"
-            href="tel:+17622398229"
-          >
-            Call Living Waters
-          </a>
-
-          <a
-            class="button button-secondary-light"
-            href="sms:+17622398229"
-          >
-            Send a Text
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ========================================
-         CONTACT
-         ======================================== -->
-
-    <section
-      class="section contact-section"
-      id="contact"
-      aria-labelledby="contact-title"
-    >
-
-      <div class="container contact-layout">
-
-        <div class="contact-intro">
-
-          <p class="eyebrow">
-            Start a Conversation
-          </p>
-
-          <h2 id="contact-title">
-            Tell us about
-            <em>the space.</em>
-          </h2>
-
-          <p>
-            Call or text Tyler directly. If you
-            already have photos of the property,
-            send them along with the kind of feature
-            you are considering.
-          </p>
-
-        </div>
-
-
-        <div class="contact-panel">
-
-          <a
-            class="contact-method"
-            href="tel:+17622398229"
-          >
-
-            <span class="contact-label">
-              Call Tyler
-            </span>
-
-            <strong>
-              (762) 239-8229
-            </strong>
-
-          </a>
-
-
-          <a
-            class="contact-method"
-            href="sms:+17622398229"
-          >
-
-            <span class="contact-label">
-              Text Tyler
-            </span>
-
-            <strong>
-              Send project details
-            </strong>
-
-          </a>
-
-
-          <div class="contact-help">
-
-            <p>
-              <strong>
-                Helpful things to include
-              </strong>
-            </p>
-
-            <ul>
-
-              <li>
-                Your city or nearest town
-              </li>
-
-              <li>
-                The type of water feature
-              </li>
-
-              <li>
-                Photos of the space
-              </li>
-
-              <li>
-                Your ideal timing
-              </li>
-
-            </ul>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-  </main>
-
-
-  <!-- ========================================
-       FOOTER
-       ======================================== -->
-
-  <footer class="site-footer">
-
-    <div class="container footer-main">
-
-      <div class="footer-brand">
-
-        <a
-          class="brand brand-footer"
-          href="#top"
-          aria-label="Living Waters Aquascapes home"
-        >
-
-          <img
-            class="brand-mark"
-            src="assets/LW-icon.png"
-            alt=""
-            width="64"
-            height="64"
-            loading="lazy"
-          />
-
-          <span class="brand-copy">
-
-            <span class="brand-name">
-              Living Waters
-            </span>
-
-            <span class="brand-sub">
-              Aquascapes
-            </span>
-
-          </span>
-
-        </a>
-
-        <p>
-          Handcrafted stone and water features
-          throughout North Georgia and the
-          Blue Ridge area.
-        </p>
-
-      </div>
-
-
-      <div class="footer-nav">
-
-        <p class="footer-label">
-          Explore
-        </p>
-
-        <a href="#services">
-          Services
-        </a>
-
-        <a href="#work">
-          Our Work
-        </a>
-
-        <a href="#process">
-          Process
-        </a>
-
-        <a href="#service-area">
-          Service Area
-        </a>
-
-      </div>
-
-
-      <div class="footer-contact">
-
-        <p class="footer-label">
-          Start a Project
-        </p>
-
-        <a href="tel:+17622398229">
-          (762) 239-8229
-        </a>
-
-        <a href="sms:+17622398229">
-          Send a Text
-        </a>
-
-        <span>
-          North Georgia • Blue Ridge
-        </span>
-
-      </div>
-
-    </div>
-
-
-    <div class="container footer-bottom">
-
-      <p>
-        © <span id="currentYear"></span>
-        Living Waters Aquascapes
-      </p>
-
-      <p class="site-credit">
-
-        Website by
-
-        <a
-          href="https://blackstagweb.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Black Stag Web Design
-        </a>
-
-      </p>
-
-    </div>
-
-  </footer>
-
-
-  <!-- ========================================
-       LIGHTBOX
-       ======================================== -->
-
-  <div
-    class="lightbox"
-    id="projectLightbox"
-    aria-hidden="true"
-  >
-
-    <div
-      class="lightbox-backdrop"
-      data-lightbox-close
-    ></div>
-
-    <div
-      class="lightbox-panel"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="lightboxCaption"
-    >
-
-      <button
-        class="lightbox-close"
-        type="button"
-        aria-label="Close image"
-        data-lightbox-close
-      >
-        <span aria-hidden="true">
-          ×
-        </span>
-      </button>
-
-      <img
-        class="lightbox-image"
-        id="lightboxImage"
-        src=""
-        alt=""
-      />
-
-      <p
-        class="lightbox-caption"
-        id="lightboxCaption"
-      ></p>
-
-    </div>
-
-  </div>
-
-
-  <script
-    src="script.js?v=20260924-1"
-    defer
-  ></script>
-
-</body>
-
-</html>
+  .nav-toggle[aria-expanded="true"]
+  span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle[aria-expanded="true"]
+  span:nth-child(3) {
+    transform:
+      translateY(-6px)
+      rotate(-45deg);
+  }
+
+  .hero {
+    min-height: 820px;
+
+    padding-bottom: 85px;
+  }
+
+  .hero-shade {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(240, 241, 230, .93),
+        rgba(235, 239, 225, .68)
+      ),
+      linear-gradient(
+        180deg,
+        rgba(238, 240, 229, .12),
+        rgba(227, 231, 218, .48)
+      );
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .intro-copy {
+    max-width: 680px;
+
+    padding-top: 0;
+  }
+
+  .service-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .work-heading {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .work-heading-copy {
+    max-width: 620px;
+  }
+
+  .project-grid {
+    grid-auto-rows:
+      minmax(300px, 48vw);
+  }
+
+  .project-card,
+  .project-card-large,
+  .project-card-wide {
+    grid-column:
+      span 6;
+  }
+
+  .philosophy-section {
+    grid-template-columns: 1fr;
+  }
+
+  .philosophy-image {
+    min-height: 560px;
+  }
+
+  .philosophy-image-shade {
+    background:
+      linear-gradient(
+        180deg,
+        transparent 65%,
+        #dce3d6 100%
+      );
+  }
+
+  .philosophy-content {
+    max-width: 800px;
+
+    padding:
+      75px 48px 95px;
+  }
+
+  .service-area-grid {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .service-area-visual {
+    width:
+      min(600px, 100%);
+
+    margin-inline: auto;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 680px) {
+
+  :root {
+    --header-height: 70px;
+  }
+
+  .container {
+    width:
+      min(
+        calc(100% - 32px),
+        var(--max)
+      );
+  }
+
+  .section {
+    padding:
+      80px 0;
+  }
+
+  .header-inner {
+    width:
+      calc(100% - 28px);
+  }
+
+  .brand {
+    gap: 9px;
+  }
+
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-name {
+    font-size: .9rem;
+  }
+
+  .brand-sub {
+    font-size: .54rem;
+  }
+
+  .nav-toggle {
+    width: 42px;
+    height: 42px;
+  }
+
+  .hero {
+    min-height: 100svh;
+
+    align-items: flex-end;
+
+    padding:
+      calc(var(--header-height) + 70px)
+      0
+      72px;
+  }
+
+  .hero-backdrop-image {
+    object-position:
+      58% center;
+  }
+
+  .hero-shade {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(240, 242, 231, .20)
+        0%,
+        rgba(239, 241, 229, .40)
+        30%,
+        rgba(237, 239, 227, .88)
+        69%,
+        rgba(238, 239, 228, .98)
+        100%
+      );
+  }
+
+  .hero-copy h1 {
+    font-size:
+      clamp(
+        3.25rem,
+        15.5vw,
+        5.2rem
+      );
+
+    line-height: .91;
+  }
+
+  .hero-lede {
+    margin-top: 23px;
+
+    color: var(--ink-soft);
+
+    font-size: .94rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    margin-top: 27px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .hero-byline {
+    margin-top: 25px;
+  }
+
+  .intro-section {
+    padding:
+      85px 0;
+  }
+
+  .intro-heading h2,
+  .section-heading h2,
+  .work-heading h2,
+  .philosophy-content h2,
+  .service-area-copy h2,
+  .contact-intro h2 {
+    font-size:
+      clamp(
+        2.7rem,
+        13vw,
+        4.2rem
+      );
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .service-card {
+    min-height: auto;
+
+    padding:
+      27px 23px 29px;
+  }
+
+  .water-break {
+    height: 330px;
+  }
+
+  .water-break-image {
+    background-position:
+      center center;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+
+    grid-auto-rows: auto;
+
+    gap: 14px;
+  }
+
+  .project-card,
+  .project-card-large,
+  .project-card-wide {
+    grid-column: auto;
+
+    aspect-ratio: 4 / 5;
+  }
+
+  .project-card-wide {
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-copy {
+    grid-template-columns: 1fr;
+
+    padding: 22px;
+  }
+
+  .project-action {
+    margin-top: 5px;
+  }
+
+  .philosophy-image {
+    min-height: 430px;
+  }
+
+  .philosophy-content {
+    padding:
+      66px 24px 80px;
+  }
+
+  .process-list {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .process-step {
+    min-height: auto;
+
+    padding: 26px 23px;
+  }
+
+  .process-step:hover {
+    transform: none;
+  }
+
+  .service-area-section {
+    padding:
+      85px 0;
+  }
+
+  .service-area-grid {
+    gap: 48px;
+  }
+
+  .service-area-visual {
+    min-height: 330px;
+
+    padding: 34px;
+  }
+
+  .service-area-visual img {
+    width:
+      min(155px, 55%);
+  }
+
+  .cta-section {
+    min-height: 680px;
+
+    align-items: flex-end;
+
+    padding:
+      85px 0;
+  }
+
+  .cta-background img {
+    object-position: center;
+  }
+
+  .cta-shade {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(14, 25, 18, .16),
+        rgba(14, 25, 18, .88) 67%,
+        rgba(14, 25, 18, .97)
+      );
+  }
+
+  .cta-content h2 {
+    font-size:
+      clamp(
+        3.2rem,
+        15vw,
+        5rem
+      );
+  }
+
+  .cta-actions {
+    flex-direction: column;
+  }
+
+  .contact-layout {
+    gap: 48px;
+  }
+
+  .contact-method {
+    padding:
+      23px 22px;
+  }
+
+  .contact-method:hover {
+    padding-left: 22px;
+  }
+
+  .contact-help {
+    padding:
+      24px 22px 27px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    padding-bottom: 44px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+
+    gap: 9px;
+  }
+
+  .lightbox {
+    padding: 12px;
+  }
+
+  .lightbox-panel {
+    max-height:
+      calc(100svh - 24px);
+  }
+
+  .lightbox-close {
+    top: 18px;
+    right: 18px;
+  }
+
+}
+
+
+/* ========================================
+   VERY SMALL MOBILE
+   ======================================== */
+
+@media (max-width: 390px) {
+
+  .brand-sub {
+    letter-spacing: .15em;
+  }
+
+  .hero-copy h1 {
+    font-size: 3.15rem;
+  }
+
+}
+
+
+/* ========================================
+   TOUCH DEVICES
+   ======================================== */
+
+@media (hover: none) {
+
+  .service-card:hover,
+  .button:hover,
+  .project-card:hover,
+  .process-step:hover {
+    transform: none;
+  }
+
+}
+
+
+/* ========================================
+   REDUCED MOTION
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior:
+      auto !important;
+
+    animation-duration:
+      .01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      .01ms !important;
+  }
+
+}
