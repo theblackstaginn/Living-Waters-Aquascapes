@@ -1530,15 +1530,55 @@ h2 em {
   margin-top: 15px;
 }
 
+/* ========================================
+   SERVICE AREA LOGO GLASS
+   ======================================== */
+
 .service-area-visual {
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
   min-width: 0;
+
+  padding:
+    34px 28px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(12, 32, 20, .38),
+      rgba(35, 58, 38, .24)
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, .12);
+
+  border-radius:
+    32px;
+
+  backdrop-filter:
+    blur(10px)
+    saturate(.88);
+
+  -webkit-backdrop-filter:
+    blur(10px)
+    saturate(.88);
+
+  box-shadow:
+    0 20px 55px
+    rgba(4, 13, 7, .16);
 }
 
 .service-area-visual img {
+  position: relative;
+
+  z-index: 1;
+
   width:
     min(520px, 100%);
 
@@ -1546,8 +1586,8 @@ h2 em {
 
   filter:
     drop-shadow(
-      0 24px 30px
-      rgba(0, 0, 0, .30)
+      0 20px 28px
+      rgba(0, 0, 0, .28)
     );
 }
 
