@@ -1158,41 +1158,13 @@ h2 em {
   inset:
     auto 0 0 0;
 
-  display: grid;
-
-  grid-template-columns:
-    1fr auto;
-
-  gap:
-    6px 18px;
-
-  align-items: end;
-
   padding:
     27px;
 }
 
-.project-type {
-  grid-column:
-    1 / -1;
-
-  color: var(--water-pale);
-
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: .61rem;
-  font-weight: 800;
-
-  letter-spacing: .17em;
-  text-transform: uppercase;
-}
-
 .project-title {
+  display: block;
+
   color: #fff;
 
   font-size:
@@ -1203,23 +1175,10 @@ h2 em {
     );
 
   line-height: 1.08;
-}
 
-.project-action {
-  padding-bottom: 4px;
-
-  color:
-    rgba(255, 255, 255, .74);
-
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: .67rem;
-  font-weight: 700;
+  text-shadow:
+    0 3px 18px
+    rgba(0, 0, 0, .65);
 }
 
 
@@ -1395,35 +1354,50 @@ h2 em {
   grid-template-columns:
     repeat(2, minmax(0, 1fr));
 
-  border-top:
-    1px solid rgba(255, 255, 255, .28);
+  overflow: hidden;
 
-  border-bottom:
-    1px solid rgba(255, 255, 255, .28);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(8, 27, 16, .58),
+      rgba(25, 48, 30, .46)
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, .16);
+
+  border-radius:
+    28px;
+
+  box-shadow:
+    0 20px 55px
+    rgba(4, 13, 7, .18);
+
+  backdrop-filter:
+    blur(10px)
+    saturate(.88);
+
+  -webkit-backdrop-filter:
+    blur(10px)
+    saturate(.88);
 }
 
 .process-step {
   min-height: 240px;
 
   padding:
-    34px 36px;
+    38px 40px;
 
   background:
-    rgba(10, 30, 18, .18);
+    transparent;
 
   border-bottom:
-    1px solid rgba(255, 255, 255, .16);
-
-  backdrop-filter:
-    blur(4px);
-
-  -webkit-backdrop-filter:
-    blur(4px);
+    1px solid rgba(255, 255, 255, .15);
 }
 
 .process-step:nth-child(odd) {
   border-right:
-    1px solid rgba(255, 255, 255, .16);
+    1px solid rgba(255, 255, 255, .15);
 }
 
 .process-step:nth-last-child(-n + 2) {
@@ -1434,7 +1408,8 @@ h2 em {
   margin:
     0 0 17px;
 
-  color: var(--text-light);
+  color:
+    var(--text-light);
 
   font-size:
     clamp(
@@ -1444,6 +1419,10 @@ h2 em {
     );
 
   line-height: 1.18;
+
+  text-shadow:
+    0 3px 18px
+    rgba(0, 0, 0, .45);
 }
 
 .process-step p {
@@ -1451,7 +1430,8 @@ h2 em {
 
   margin: 0;
 
-  color: var(--text-soft);
+  color:
+    rgba(245, 243, 233, .88);
 
   font-family:
     system-ui,
@@ -1465,7 +1445,8 @@ h2 em {
   line-height: 1.76;
 
   text-shadow:
-    0 2px 12px rgba(0, 0, 0, .42);
+    0 2px 12px
+    rgba(0, 0, 0, .38);
 }
 
 
@@ -1529,6 +1510,7 @@ h2 em {
 .service-area-copy .button {
   margin-top: 15px;
 }
+
 
 /* ========================================
    SERVICE AREA LOGO GLASS
@@ -2608,13 +2590,7 @@ h2 em {
   }
 
   .project-copy {
-    grid-template-columns: 1fr;
-
     padding: 22px;
-  }
-
-  .project-action {
-    margin-top: 5px;
   }
 
 
@@ -2642,22 +2618,45 @@ h2 em {
 
   .process-list {
     grid-template-columns: 1fr;
+
+    border-radius:
+      24px;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(8, 27, 16, .64),
+        rgba(24, 48, 29, .50)
+      );
+
+    backdrop-filter:
+      blur(10px)
+      saturate(.88);
+
+    -webkit-backdrop-filter:
+      blur(10px)
+      saturate(.88);
   }
 
   .process-step {
     min-height: auto;
 
     padding:
-      28px 5px;
+      30px 26px;
 
     background:
-      rgba(9, 28, 16, .26);
+      transparent;
 
     border-right:
       0 !important;
 
     border-bottom:
-      1px solid rgba(255, 255, 255, .18);
+      1px solid rgba(255, 255, 255, .15);
+  }
+
+  .process-step:nth-last-child(-n + 2) {
+    border-bottom:
+      1px solid rgba(255, 255, 255, .15);
   }
 
   .process-step:last-child {
@@ -2676,6 +2675,14 @@ h2 em {
 
   .service-area-grid {
     gap: 58px;
+  }
+
+  .service-area-visual {
+    padding:
+      26px 18px;
+
+    border-radius:
+      24px;
   }
 
   .service-area-visual img {
