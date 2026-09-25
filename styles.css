@@ -2851,3 +2851,377 @@ h2 em {
   }
 
 }
+/* ========================================
+   CONTACT — UNIFIED GLASS PATCH
+   ======================================== */
+
+.contact-layout {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, .9fr)
+    minmax(380px, 1fr);
+
+  gap: 0;
+
+  align-items: stretch;
+
+  overflow: hidden;
+
+  padding: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 28, 16, .66),
+      rgba(25, 50, 31, .48)
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, .15);
+
+  border-radius:
+    30px;
+
+  box-shadow:
+    0 24px 65px
+    rgba(3, 12, 6, .22);
+
+  backdrop-filter:
+    blur(10px)
+    saturate(.88);
+
+  -webkit-backdrop-filter:
+    blur(10px)
+    saturate(.88);
+}
+
+
+/* Kill the old separate floating glass
+   backgrounds on each side */
+
+.contact-intro::before,
+.contact-panel::before {
+  display: none;
+}
+
+
+/* ========================================
+   LEFT SIDE
+   ======================================== */
+
+.contact-intro {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-width: 0;
+
+  padding:
+    58px 58px 60px;
+}
+
+.contact-intro::after {
+  content: "";
+
+  position: absolute;
+
+  top: 42px;
+  right: 0;
+  bottom: 42px;
+
+  width: 1px;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(255, 255, 255, .18) 15%,
+      rgba(255, 255, 255, .18) 85%,
+      transparent
+    );
+}
+
+.contact-intro h2 {
+  max-width: 520px;
+
+  margin-bottom: 27px;
+}
+
+.contact-intro > p:not(.eyebrow) {
+  max-width: 500px;
+
+  margin-bottom: 0;
+
+  color:
+    rgba(245, 243, 233, .84);
+}
+
+
+/* ========================================
+   RIGHT SIDE
+   ======================================== */
+
+.contact-panel {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  overflow: visible;
+
+  padding:
+    42px 50px 40px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(72, 103, 70, .18),
+      rgba(10, 30, 18, .10)
+    );
+}
+
+
+/* Contact rows */
+
+.contact-method {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  padding:
+    23px 0 25px;
+
+  border-top: 0;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, .15);
+
+  transition:
+    transform .22s var(--ease),
+    padding-left .22s var(--ease);
+}
+
+.contact-method:first-child {
+  border-top: 0;
+}
+
+.contact-method:hover {
+  padding-left: 10px;
+
+  transform:
+    translateX(2px);
+}
+
+.contact-label {
+  color:
+    var(--water-light);
+
+  font-size: .62rem;
+  font-weight: 800;
+
+  letter-spacing: .18em;
+}
+
+.contact-method strong {
+  color:
+    var(--text-light);
+
+  font-size:
+    clamp(
+      1.15rem,
+      2vw,
+      1.38rem
+    );
+
+  line-height: 1.25;
+}
+
+
+/* Helpful details */
+
+.contact-help {
+  margin-top: 3px;
+
+  padding:
+    25px 0 0;
+}
+
+.contact-help p {
+  margin:
+    0 0 15px;
+
+  color:
+    var(--text-light);
+
+  font-size: 1rem;
+}
+
+.contact-help ul {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    10px 24px;
+
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+
+  color:
+    rgba(245, 243, 233, .76);
+
+  font-size: .82rem;
+}
+
+.contact-help li {
+  position: relative;
+
+  padding-left: 16px;
+}
+
+.contact-help li::before {
+  content: "";
+
+  position: absolute;
+
+  top: .72em;
+  left: 0;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background:
+    var(--water-light);
+
+  box-shadow:
+    0 0 10px
+    rgba(167, 201, 198, .35);
+}
+
+
+/* ========================================
+   TABLET
+   ======================================== */
+
+@media (max-width: 1000px) {
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .contact-intro {
+    padding:
+      50px 46px 42px;
+  }
+
+  .contact-intro::after {
+    top: auto;
+
+    left: 46px;
+    right: 46px;
+    bottom: 0;
+
+    width: auto;
+    height: 1px;
+
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, .18) 12%,
+        rgba(255, 255, 255, .18) 88%,
+        transparent
+      );
+  }
+
+  .contact-panel {
+    padding:
+      30px 46px 44px;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 680px) {
+
+  .contact-layout {
+    gap: 0;
+
+    border-radius:
+      24px;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(8, 28, 16, .70),
+        rgba(25, 50, 31, .52)
+      );
+
+    backdrop-filter:
+      blur(10px)
+      saturate(.88);
+
+    -webkit-backdrop-filter:
+      blur(10px)
+      saturate(.88);
+  }
+
+  .contact-intro {
+    padding:
+      38px 26px 34px;
+  }
+
+  .contact-intro::after {
+    left: 26px;
+    right: 26px;
+  }
+
+  .contact-panel {
+    padding:
+      20px 26px 34px;
+  }
+
+  .contact-method {
+    padding:
+      22px 0;
+  }
+
+  .contact-method:hover {
+    padding-left: 0;
+
+    transform: none;
+  }
+
+  .contact-help {
+    padding-top: 24px;
+  }
+
+  .contact-help ul {
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+  }
+
+}
