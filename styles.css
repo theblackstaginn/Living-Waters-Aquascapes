@@ -3304,3 +3304,127 @@ h2 em {
     animation: none;
   }
 }
+
+
+/* ========================================
+   HERO — TRUE COVER BEHAVIOR
+   Keep the opening composition inside the
+   first viewport and let the fixed header
+   float over the cover art.
+   ======================================== */
+
+.site-header:not(.scrolled) {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7, 22, 13, .76) 0%,
+      rgba(7, 22, 13, .40) 64%,
+      rgba(7, 22, 13, .12) 100%
+    );
+  border-bottom-color: transparent;
+  box-shadow: none;
+  backdrop-filter:
+    blur(8px)
+    saturate(.9);
+  -webkit-backdrop-filter:
+    blur(8px)
+    saturate(.9);
+}
+
+.hero {
+  height: 100svh;
+  min-height: 680px;
+  max-height: 1000px;
+  padding:
+    calc(var(--header-height) + 36px)
+    0
+    clamp(44px, 7vh, 78px);
+}
+
+.hero-backdrop-image {
+  object-position: center 46%;
+}
+
+.hero-shade {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(6, 20, 11, .08) 0%,
+      rgba(6, 20, 11, .10) 28%,
+      rgba(7, 22, 13, .44) 57%,
+      rgba(7, 22, 13, .88) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(8, 25, 15, .42) 0%,
+      rgba(8, 25, 15, .14) 62%,
+      rgba(8, 25, 15, .04) 100%
+    );
+}
+
+@media (max-width: 700px) {
+  .hero {
+    height: 100svh;
+    min-height: 0;
+    max-height: none;
+    padding:
+      calc(var(--header-height) + 24px)
+      0
+      max(28px, env(safe-area-inset-bottom));
+  }
+
+  .hero-backdrop-image {
+    object-position: 58% 42%;
+  }
+
+  .hero-copy h1 {
+    max-width: 11ch;
+    font-size:
+      clamp(
+        2.75rem,
+        12.5vw,
+        4.55rem
+      );
+    line-height: .9;
+  }
+
+  .hero .eyebrow {
+    margin-bottom: 10px;
+    font-size: .66rem;
+  }
+
+  .hero-lede {
+    max-width: 34rem;
+    margin-top: 18px;
+    font-size: .9rem;
+    line-height: 1.5;
+  }
+
+  .hero-actions {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .hero-actions .button {
+    min-height: 54px;
+  }
+
+  .hero-byline {
+    margin-top: 18px;
+    font-size: .72rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-copy h1 {
+    font-size: clamp(2.55rem, 12vw, 3.6rem);
+  }
+
+  .hero-lede {
+    font-size: .86rem;
+  }
+
+  .hero-actions .button {
+    min-height: 50px;
+  }
+}
