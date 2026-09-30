@@ -804,6 +804,267 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* ========================================
+     PULL TO REFRESH
+
+     Mirrors the Quest Board mobile gesture:
+     pull from the very top, release after
+     the threshold, then reload with a
+     cache-busting query parameter.
+     ======================================== */
+
+  let pullStartY = null;
+  let pullStartX = null;
+  let pullDistance = 0;
+  let pullRefreshing = false;
+
+  const PULL_THRESHOLD = 84;
+
+
+  function resetPullRefresh() {
+
+    pullStartY = null;
+    pullStartX = null;
+    pullDistance = 0;
+
+    const indicator =
+      document.getElementById(
+        "pullRefresh"
+      );
+
+    if (!indicator) {
+      return;
+    }
+
+    indicator.classList.remove(
+      "is-pulling",
+      "is-ready"
+    );
+
+    indicator.style.removeProperty(
+      "--pull-distance"
+    );
+
+  }
+
+
+  function canStartPullRefresh(event) {
+
+    return (
+      !pullRefreshing &&
+      event.touches.length === 1 &&
+      window.scrollY <= 0 &&
+      !body.classList.contains(
+        "nav-open"
+      ) &&
+      !body.classList.contains(
+        "lightbox-open"
+      ) &&
+      !event.target.closest(
+        "input, textarea, select, [contenteditable]"
+      )
+    );
+
+  }
+
+
+  function reloadFreshPage() {
+
+    const url =
+      new URL(
+        window.location.href
+      );
+
+    url.searchParams.set(
+      "refresh",
+      Date.now()
+    );
+
+    window.location.replace(
+      url.toString()
+    );
+
+  }
+
+
+  document.addEventListener(
+    "touchstart",
+    (event) => {
+
+      if (
+        !canStartPullRefresh(
+          event
+        )
+      ) {
+        return;
+      }
+
+      pullStartY =
+        event.touches[0].clientY;
+
+      pullStartX =
+        event.touches[0].clientX;
+
+    },
+    {
+      passive: true
+    }
+  );
+
+
+  document.addEventListener(
+    "touchmove",
+    (event) => {
+
+      if (
+        pullStartY === null ||
+        event.touches.length !== 1
+      ) {
+        resetPullRefresh();
+        return;
+      }
+
+      const deltaY =
+        event.touches[0].clientY -
+        pullStartY;
+
+      const deltaX =
+        event.touches[0].clientX -
+        pullStartX;
+
+      if (
+        window.scrollY > 0 ||
+        Math.abs(deltaX) >
+          Math.abs(deltaY) ||
+        deltaY <= 12
+      ) {
+
+        if (
+          deltaY < 0 ||
+          Math.abs(deltaX) >
+            Math.abs(deltaY)
+        ) {
+          resetPullRefresh();
+        }
+
+        return;
+      }
+
+      event.preventDefault();
+
+      pullDistance =
+        deltaY;
+
+      const indicator =
+        document.getElementById(
+          "pullRefresh"
+        );
+
+      const label =
+        document.getElementById(
+          "pullRefreshLabel"
+        );
+
+      if (
+        !indicator ||
+        !label
+      ) {
+        return;
+      }
+
+      indicator.classList.add(
+        "is-pulling"
+      );
+
+      indicator.classList.toggle(
+        "is-ready",
+        pullDistance >=
+          PULL_THRESHOLD
+      );
+
+      indicator.style.setProperty(
+        "--pull-distance",
+        `${Math.min(
+          92,
+          deltaY * 0.7
+        )}px`
+      );
+
+      label.textContent =
+        pullDistance >=
+          PULL_THRESHOLD
+          ? "Release to refresh"
+          : "Pull to refresh";
+
+    },
+    {
+      passive: false
+    }
+  );
+
+
+  document.addEventListener(
+    "touchend",
+    () => {
+
+      const shouldRefresh =
+        pullDistance >=
+          PULL_THRESHOLD &&
+        !pullRefreshing;
+
+      resetPullRefresh();
+
+      if (!shouldRefresh) {
+        return;
+      }
+
+      pullRefreshing = true;
+
+      const indicator =
+        document.getElementById(
+          "pullRefresh"
+        );
+
+      const label =
+        document.getElementById(
+          "pullRefreshLabel"
+        );
+
+      if (
+        indicator &&
+        label
+      ) {
+
+        indicator.classList.add(
+          "is-refreshing"
+        );
+
+        label.textContent =
+          "Refreshing…";
+
+      }
+
+      window.setTimeout(
+        reloadFreshPage,
+        180
+      );
+
+    },
+    {
+      passive: true
+    }
+  );
+
+
+  document.addEventListener(
+    "touchcancel",
+    resetPullRefresh,
+    {
+      passive: true
+    }
+  );
+
+
+  /* ========================================
      IMAGE LOAD SAFETY
 
      If a project image cannot
