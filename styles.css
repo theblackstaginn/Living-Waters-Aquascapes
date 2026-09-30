@@ -3428,3 +3428,158 @@ h2 em {
     min-height: 50px;
   }
 }
+
+
+/* ========================================
+   HERO — FULL MOBILE ARTWORK
+   Show the complete cover image on phones,
+   then continue the hero copy below it.
+   ======================================== */
+
+.hero-title-main,
+.hero-title-home {
+  display: inline;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    display: block;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    padding: 0;
+    overflow: visible;
+    background: var(--forest-deep);
+  }
+
+  .hero-backdrop {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    background: var(--forest-deep);
+  }
+
+  .hero-backdrop-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center top;
+    transform: none;
+    filter:
+      saturate(.96)
+      contrast(1.02)
+      brightness(.94);
+  }
+
+  .hero-shade {
+    display: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    margin: 0;
+    padding:
+      30px
+      24px
+      max(36px, env(safe-area-inset-bottom));
+    background:
+      linear-gradient(
+        180deg,
+        rgba(7, 22, 13, .98) 0%,
+        rgba(8, 27, 16, .96) 52%,
+        rgba(10, 31, 19, .98) 100%
+      );
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, .06);
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .hero .eyebrow {
+    margin-bottom: 11px;
+    color: var(--water-light);
+    font-size: .66rem;
+    letter-spacing: .20em;
+  }
+
+  .hero-copy h1 {
+    max-width: none;
+    margin: 0;
+    font-size:
+      clamp(
+        2.75rem,
+        12vw,
+        4.3rem
+      );
+    line-height: .92;
+    letter-spacing: -.04em;
+    text-wrap: balance;
+  }
+
+  .hero-title-main,
+  .hero-copy h1 em,
+  .hero-title-home {
+    display: block;
+  }
+
+  .hero-copy h1 em {
+    margin-top: .03em;
+  }
+
+  .hero-title-home {
+    margin-top: .02em;
+  }
+
+  .hero-lede {
+    max-width: none;
+    margin-top: 20px;
+    color: rgba(247, 247, 240, .88);
+    font-size: .94rem;
+    line-height: 1.52;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 11px;
+    margin-top: 22px;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    min-height: 54px;
+  }
+
+  .hero-byline {
+    margin-top: 18px;
+    font-size: .74rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-inner {
+    padding-inline: 20px;
+  }
+
+  .hero-copy h1 {
+    font-size:
+      clamp(
+        2.55rem,
+        11.6vw,
+        3.5rem
+      );
+  }
+
+  .hero-lede {
+    font-size: .88rem;
+  }
+
+  .hero-actions .button {
+    min-height: 50px;
+  }
+}
