@@ -114,12 +114,28 @@
 
   <link
     rel="stylesheet"
-    href="styles.css?v=20260925-2"
+    href="styles.css?v=20260930-1"
   />
 </head>
 
 
 <body>
+
+  <div
+    class="pull-refresh"
+    id="pullRefresh"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+  >
+    <span
+      class="pull-refresh-mark"
+      aria-hidden="true"
+    >↻</span>
+    <span id="pullRefreshLabel">
+      Pull to refresh
+    </span>
+  </div>
 
   <a
     class="skip-link"
@@ -1100,7 +1116,7 @@
 
 
   <script
-    src="script.js?v=20260924-1"
+    src="script.js?v=20260930-1"
     defer
   ></script>
 
