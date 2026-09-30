@@ -3447,6 +3447,7 @@ h2 em {
     height: auto;
     min-height: 0;
     max-height: none;
+    margin-top: var(--header-height);
     padding: 0;
     overflow: visible;
     background: var(--forest-deep);
